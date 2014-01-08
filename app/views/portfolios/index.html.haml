@@ -1,0 +1,34 @@
+%h1 Portrait
+.row
+  .columns.small-8
+    =image_tag(@portfolio.image.landscape.url)
+  .columns.small-4
+    %h3= t('author')
+    %p
+      %strong Né le :
+      28 avril 1990
+    %p
+      %strong Domicile :
+      Bienne
+    %p
+      %strong Taille :
+      1m 65
+    %p
+      %strong Catégorie :
+      blabla
+    %p
+      %strong Club:
+      Judoklub-Bienne
+    %p
+      %strong Débuts professionel :
+      Il y qqe années
+    %p
+      %strong Hobbies :
+      des trucs et d'autres. Notament plein de choses et d'autres!!!
+    %p
+      %strong Idoles :
+      Personne
+
+.row
+  .columns.small-12
+    %p= @portfolio.description.html_safe

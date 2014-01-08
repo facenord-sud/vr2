@@ -1,0 +1,2 @@
+$('#posts').append("#{escape_javascript(render @posts)}")
+$('#paginate').html("#{escape_javascript(paginate @posts)}")

@@ -1,0 +1,29 @@
+%h4 Anciens événements
+-#.past
+-#  %ul.years
+-#    -Event.past_by_month.each_with_index do |(year_key, months), index|
+-#    -open = set_open(index)
+-#      %li.year{class: open}
+-#        = link_to year_key, '#'
+-#        %ul.months{class: open}
+-#          -months.each_with_index do |(month_key, events_by_month), index_m|
+-#            -open_m = open if index_m == 0
+-#            %li.month{class: open}
+-#              = link_to(to_month_name(month_key), '#')
+-#              %ul.events{class: open_m}
+-#                -events_by_month.each do |id_key, an_event|
+-#                  %li.event{class: open_m}= link_to(an_event.title, an_event)
+%dl.accordion{:'data-accordion' => true}
+  -Event.past_by_month.each_with_index do |(year_key, months), index|
+    %dd
+      = link_to year_key, "##{year_key}"
+      .content{id: year_key, class: (index == 0 ? 'active': nil)}
+        %dl.accordion{:'data-accordion' => true}
+          -months.each_with_index do |(month_key, events_by_month), index_m|
+            %dd
+              = link_to(to_month_name(month_key), "##{to_month_name(month_key)}")
+              -index == 0 ? active = 'active': active = nil
+              .content{id: to_month_name(month_key), class: (index_m == 0 ? 'active': nil)}
+                %ul
+                  -events_by_month.each do |id_key, an_event|
+                    %li= link_to(an_event.title, an_event)

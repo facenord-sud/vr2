@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @carreer.name %>
+</p>
+
+<p>
+  <strong>Medals:</strong>
+  <%= @carreer.medals %>
+</p>
+
+<%= link_to 'Edit', edit_carreer_path(@carreer) %> |
+<%= link_to 'Back', carreers_path %>

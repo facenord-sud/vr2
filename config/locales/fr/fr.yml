@@ -1,0 +1,87 @@
+# Sample localization file for French. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+fr:
+    dico:
+        app_name: &app_name Valentin Rota Judoka
+        back: &back Retour
+        connection: &connection Connexion
+        inscription: &inscription Inscription
+        password: &password Mot de passse
+        email: &email Adresse de courriel
+        password_confirmation: &password_confirmation Confirmation du mot de passe
+        current_password: &current_password Mot de passe actuel
+        remember_me: &remember_me Se souvenir de moi
+        name: &name Pseudo
+        author: &author Valentin Rota
+    activerecord:
+      models:
+        user: Utilisateur
+        portfolio: Portrait
+        post: Actualité
+        event: Evénement
+        attributes:
+          user:
+            email: *email
+            password: *password
+            password_confirmation: *password_confirmation
+            current_password: *current_password
+            remember_me: *remember_me
+            name: *name
+    views:
+        pagination:
+          first: "&laquo; Premier"
+          last: "Dernier &raquo;"
+          previous: "&lsaquo; Précedant"
+          next: "Suivant &rsaquo;"
+          truncate: "..."
+    app_name: *app_name
+    back: *back
+    author: *author
+    from_to: "du %{start} au %{end}"
+    header:
+        admin: "Administration"
+        portfolio: "Portrait"
+        user:
+            profil: "Mon profil"
+            edit: "Modifier"
+            logout: "Déconnexion"
+        lang: "Langues"
+        connection: *connection
+        judo: Judo
+    static_pages:
+        home:
+            h1:
+                title: Bienvenue sur %{app_name} !!!
+                published_by: "par %{author} il y a %{time}"
+                next_event: Prochain événement
+                the_event: " Du %{start} au %{end} à %{place}"
+        about:
+            title: A propos
+            text: Ce site a été réalisé dans le but de d'essayer le framework ruby on rails pour collaide. Construit en moins de deux jours
+        contact:
+            title: Contactez-moi
+            text: Si tu veux plus d'infos d'infos, contacte-moi à l'adresse facenord.sud at gmail point com
+        help:
+            title: Aide et lien utiles
+            text1: Ce site a été développé grâce au farmework Ruby On Rails, basé sur le langage Ruby. Il utilise une foule de librairies additionels nécessaires au bon fonctionement du site.
+            text2: "Pour voir le code source, rendez-vous sur  github à l'adresse %{github}"
+            text3: Il y a plusieurs liens utiles qui fournissent une bonne documentation pour comprndre le fonctionement de ruby et ruby on rails. Je mettrai les liens prochainement
+    events:
+      index:
+        print_event: "Du %{start} au %{end}, %{name} à %{place}. %{description}"
+        sticky:
+          sub_header: "Du %{start} au %{end} à %{place}"
+    months:
+      january: Janvier
+      february: Février
+      march: Mars
+      april: Avril
+      may: Mai
+      june: Juin
+      july: Juillet
+      august: Août
+      september: Septembre
+      october: Octobre
+      november: Novembre
+      december: Décembre

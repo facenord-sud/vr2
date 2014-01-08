@@ -1,0 +1,26 @@
+%h1 Compétitions / Stages à venir
+.row
+  .columns.small-8
+    %table
+      -@events.each do |an_event|
+        %tr
+          %td
+            =link_to image_tag(an_event.image.url, class: 'events-image'), an_event, class: 'th'
+          %td
+            = link_to(t('events.index.print_event',
+          start: l(an_event.starting_at, format: :long),
+          end: l(an_event.ending_at, format: :long),
+          name: an_event.title,
+          place: an_event.place,
+          description: an_event.description), an_event)
+  .columns.small-4
+    .panel
+      -if @sticky.nil?
+        %p Aucun événement important à venir
+      -else
+        %h4= link_to @sticky.title, @sticky
+        %h6.subheader= t('.sticky.sub_header', start: @sticky.starting_at, end: @sticky.ending_at, place: @sticky.place)
+        %p= link_to image_tag(@sticky.image.thumb.url), @sticky, class: 'th'
+        %p= @sticky.description
+    =render 'events/side'
+

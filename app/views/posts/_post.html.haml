@@ -1,0 +1,8 @@
+.row
+  .columns.small-12
+    %h3= post.title
+    %h6.subheader= t('static_pages.home.h1.published_by', author: t('author'), time: time_ago_in_words(post.updated_at))
+    =# image_tag(a_post.image.thumb.url)
+    =render partial: 'layouts/image', locals: {image: post.test_image, to_show: post.test_image.asset.url}
+    %p= post.body.html_safe
+    %hr

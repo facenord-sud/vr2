@@ -1,0 +1,45 @@
+!!! 5
+/ paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
+/[if lt IE 7 ] <html class=\"ie6\" lang=\"en\">
+/[if IE 7 ]    <html class=\"ie7\" lang=\"en\">
+/[if IE 8 ]    <html class=\"ie8\" lang=\"en\">
+/[if IE 9 ]    <html class=\"ie9\" lang=\"en\">
+/[if (gt IE 9)|!(IE)] <!--> <html lang=\"en\">
+
+%head
+  %meta{ :charset => "utf-8" }
+
+  -# Uncomment to make IE8 render like IE7
+  -# meta http-equiv="X-UA-Compatible" content="IE=7"
+
+  -# Set the viewport width to device width for mobile
+  %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1.0" }
+  -#%meta{name: 'description', content: description(yield(:meta_description))}
+  -#%meta{name: 'keywords', content: key_words(yield(:key_words))}
+  %meta{name: 'author', content: 'Numa de Montmollin'}
+
+  %title= full_title(yield(:title))
+  = #favicon_link_tag 'collaide_icon.ico'
+  = stylesheet_link_tag "application"
+  = javascript_include_tag "vendor/modernizr"
+  = csrf_meta_tag
+
+%body
+  = render 'layouts/header'
+  -#.row
+    #breadcrumb.columns.small-12
+      = render_breadcrumbs :builder => ::FoundationBreadcrumbsBuilder, :separator => "&raquo;"
+  -unless flash.empty?
+    .row
+      .columns.small-12
+        -flash.each do |key, value|
+          .alert-box{class: key, :'data-alert' =>  true}
+            = value
+            %a{href: '#', class: 'close'}= "&times;".html_safe
+  .row#main-content
+    .columns.small-12
+      = yield
+  .row#footer
+    = render 'layouts/footer'
+
+  = javascript_include_tag 'application'

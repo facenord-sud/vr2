@@ -1,0 +1,5 @@
+.image.th
+  =link_to image_tag(to_show, title: image.title, alt: image.legend), image.asset.url, class: 'th'
+  .legend
+    %h5= image.title
+    %legend= image.legend

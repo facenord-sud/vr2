@@ -1,0 +1,30 @@
+.contain-to-grid
+  %nav.top-bar{:'data-topbar' => true}
+    %ul.title-area
+      %li.name
+        %h1= link_to t("app_name"), eval("root_#{I18n.locale}_path")
+      %li.toggle-topbar.menu-icon
+        %a{href: "#"}>
+          %span
+    %section.top-bar-section
+      %ul.left
+        -if user_signed_in?
+          %li= link_to 'admin', rails_admin_path
+        %li{class: set_active(:portfolios)}= link_to t('header.portfolio'), portfolios_path
+        -custom_class = 'active' if current_page?(controller: :events) or current_page?(controller: :events, action: :show, id: params[:id]||1)
+        %li{class: custom_class}= link_to 'Calendrier', events_path
+        %li.has-dropdown.not-click
+          = link_to t('header.judo'), '#'
+          %ul.dropdown
+            %li= link_to 'Objectifs', '#'
+            %li= link_to 'Résultats', carreers_path
+        %li{class: set_active(:galeries)}= link_to 'Galerie', galeries_path
+      %ul.right
+        -if user_signed_in?
+          %li.has-dropdown.not-click
+            %a{href: '#'}= current_user.to_s
+            %ul.dropdown
+              %li= link_to t("header.user.profil"), current_user
+              %li= link_to t("header.user.edit"), edit_user_registration_path
+              %li.divider
+              %li= link_to t("header.user.logout"), destroy_user_session_path, method: :delete

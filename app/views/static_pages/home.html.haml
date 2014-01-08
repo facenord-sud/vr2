@@ -1,0 +1,15 @@
+%h1= t('static_pages.home.h1.title', app_name: t('app_name'))
+%dl.sub-nav
+  %dd.active.sticky
+    =link_to 'En-haut', '#', class: 'hide', id:'to-top'
+.row
+  .columns.small-8#posts
+    =render @posts
+  .columns.small-4#home-right
+    .panel
+      %h4= t('.h1.next_event')
+      %h5= link_to @event.title, events_path
+      %p= t('.h1.the_event', start: l(@event.starting_at, format: :long), end: l(@event.ending_at, format: :long), place: @event.place)
+      =link_to(image_tag(@event.image.thumb.url), events_path, class: 'th') unless @event.image.url.nil?
+#paginate
+  =paginate @posts

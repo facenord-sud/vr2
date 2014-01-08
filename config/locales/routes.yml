@@ -1,0 +1,20 @@
+fr:
+    routes:
+        new: "nouveau"
+        edit: "editer"
+        destroy: "supprimer"
+        show: "afficher"
+
+        users: "membres"
+        user: "membre"
+        sign_in: "connexion"
+        sign_out: "deconnexion"
+        password: "mot-de-passe"
+        sign_up: "inscription"
+        cancel: "annuler"
+
+        portfolios: 'portrait'
+
+        contact: "contactez-nous"
+        about: "a-propos"
+        help: "aide"

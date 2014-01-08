@@ -1,0 +1,14 @@
+%h1 Galerie d'images
+%ul.small-block-grid-3
+  -@galeries.each do |a_galerie|
+    %li
+      %ul.clearing-thumbs.clearing-feature{:'data-clearing' => true}
+        -a_galerie.images.each_with_index do |an_image, index|
+          -featured = 'clearing-featured-img image th' if index == 0
+          %li{class: featured}
+            =link_to(image_tag(an_image.asset.url, :'data-caption' => an_image.title+' '+an_image.legend), an_image.asset.url, class: 'th')
+            -if index == 0
+              .legend
+                %h5= a_galerie.title
+                %legend= a_galerie.description
+
