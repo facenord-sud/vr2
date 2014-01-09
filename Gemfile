@@ -5,6 +5,8 @@ gem 'rails', '4.0.0'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
+gem 'rails_12factor'
+
 gem 'bcrypt-ruby', '3.0.1'
 
 gem 'faker', '1.0.1'
