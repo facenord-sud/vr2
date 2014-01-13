@@ -45,6 +45,7 @@ class Event < ActiveRecord::Base
 
   def self.past_by_month
     events = self.where('events.starting_at <= ?', Time.zone.now).order('starting_at DESC').all
+    return [] if events.empty?
     year =  events.first.start_year
     month = events.first.start_month
     events_to_return = {year => {month => {}}}

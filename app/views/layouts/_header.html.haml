@@ -10,15 +10,15 @@
       %ul.left
         -if user_signed_in?
           %li= link_to 'admin', rails_admin_path
-        %li{class: set_active(:portfolios)}= link_to t('header.portfolio'), portfolios_path
-        -custom_class = 'active' if current_page?(controller: :events) or current_page?(controller: :events, action: :show, id: params[:id]||1)
+        %li{class: set_active(portfolios_path)}= link_to t('header.portfolio'), portfolios_path
+        -custom_class = 'active' if current_page?(events_path) or current_page?(event_path(params[:id]||1))
         %li{class: custom_class}= link_to 'Calendrier', events_path
         %li.has-dropdown.not-click
           = link_to t('header.judo'), '#'
           %ul.dropdown
             %li= link_to 'Objectifs', '#'
             %li= link_to 'Résultats', carreers_path
-        %li{class: set_active(:galeries)}= link_to 'Galerie', galeries_path
+        %li{class: set_active(galeries_path)}= link_to 'Galerie', galeries_path
       %ul.right
         -if user_signed_in?
           %li.has-dropdown.not-click

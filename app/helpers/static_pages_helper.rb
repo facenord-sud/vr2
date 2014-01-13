@@ -1,6 +1,12 @@
 module StaticPagesHelper
   def set_active(controller, action=:index, custom='')
-    custom+'active' if current_page?(controller: controller, action: action)
+    if controller.is_a? String
+      options = controller
+    else
+      options = {}
+      options = {controller: controller, action: action}
+    end
+    custom+'active' if current_page?(options)
   end
 
   def set_open(index, custom='')

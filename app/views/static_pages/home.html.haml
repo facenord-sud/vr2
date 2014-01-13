@@ -8,8 +8,11 @@
   .columns.small-4#home-right
     .panel
       %h4= t('.h1.next_event')
-      %h5= link_to @event.title, events_path
-      %p= t('.h1.the_event', start: l(@event.starting_at, format: :long), end: l(@event.ending_at, format: :long), place: @event.place)
-      =link_to(image_tag(@event.image.thumb.url), events_path, class: 'th') unless @event.image.url.nil?
+      -if @event.empty?
+        %h5 Aucun prochain événement
+      -else
+        %h5= link_to @event.title, events_path
+        %p= t('.h1.the_event', start: l(@event.starting_at, format: :long), end: l(@event.ending_at, format: :long), place: @event.place)
+        =link_to(image_tag(@event.image.thumb.url), events_path, class: 'th') unless @event.image.url.nil?
 #paginate
   =paginate @posts
