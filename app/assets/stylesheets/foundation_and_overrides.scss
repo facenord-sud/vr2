@@ -30,7 +30,7 @@
 
 // $include-html-grid-classes: $include-html-classes;
 
-// $row-width: rem-calc(1000);
+ $row-width: 1120px;
 // $column-gutter: rem-calc(30);
 // $total-columns: 12;
 
@@ -931,14 +931,14 @@
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
-// $topbar-height: 45px;
+ $topbar-height: 70px;
 // $topbar-margin-bottom: 0;
 
 // Control Input height for top bar
 
 // Controlling the styles for the title in the top bar
 // $topbar-title-weight: normal;
-// $topbar-title-font-size: rem-calc(17);
+ $topbar-title-font-size: 30px;
 
 // Style the top bar dropdown elements
 // $topbar-dropdown-bg: #333;
@@ -952,15 +952,15 @@
 // $topbar-link-color: #fff;
 // $topbar-link-color-hover: #fff;
 // $topbar-link-color-active: #fff;
-// $topbar-link-weight: normal;
-// $topbar-link-font-size: rem-calc(13);
+ $topbar-link-weight: normal;
+ $topbar-link-font-size: 30px;
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg-hover: #272727  ;
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: darken($primary-color, 5%);
 // $topbar-link-font-family: $body-font-family;
 
-// $topbar-button-font-size: 0.75rem;
+// $topbar-button-font-size: 10rem;
 
 // $topbar-dropdown-label-color: #777;
 // $topbar-dropdown-label-text-transform: uppercase;
@@ -970,7 +970,7 @@
 
 // Top menu icon styles
 // $topbar-menu-link-transform: uppercase;
-// $topbar-menu-link-font-size: rem-calc(13);
+// $topbar-menu-link-font-size: emcalc(20px);
 // $topbar-menu-link-weight: bold;
 // $topbar-menu-link-color: #fff;
 // $topbar-menu-icon-color: #fff;
@@ -991,3 +991,28 @@
 // $topbar-sticky-class: ".sticky";
 // $topbar-arrows: true; //Set false to remove the triangle icon from the menu item
 @import 'foundation';
+
+.contain-to-grid .top-bar {
+  margin-top: emCalc(200px);
+    .active-title {
+      background-color: $primary-color;
+  }
+}
+
+body{
+  background: url(image_path('home.jpg')) no-repeat center fixed;
+  -webkit-background-size: cover; /* pour Chrome et Safari */
+  -moz-background-size: cover; /* pour Firefox */
+  -o-background-size: cover; /* pour Opera */
+  background-size: cover; /* version standardisée */
+}
+
+.content {
+  background-color: white;
+  padding-left: emCalc(20px);
+  padding-right: emCalc(20px);
+}
+
+.row {
+  max-width: $row-width;
+}

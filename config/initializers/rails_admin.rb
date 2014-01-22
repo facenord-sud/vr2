@@ -149,6 +149,14 @@ RailsAdmin.config do |config|
     end
   end
 
+   config.model ObjectiveList do
+     edit do
+       field :main, :wysihtml5
+       field :image
+       field :objectives
+     end
+   end
+
    def image_label_method
     "<img src=\"#{self.asset.mini.url}\"/>".html_safe
    end

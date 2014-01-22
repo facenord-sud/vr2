@@ -6,6 +6,7 @@ class Image < ActiveRecord::Base
   belongs_to :portfolio
   belongs_to :event
   belongs_to :galery
+  belongs_to :objective_list
 
   validates_presence_of :asset
   validates_presence_of :title

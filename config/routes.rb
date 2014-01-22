@@ -1,8 +1,7 @@
   Collaide::Application.routes.draw do
 
-
-
     localized do
+      resources :objective_lists, only: :index
       resources :events, only: [:index, :show] do
         get :old, on: :collection
       end

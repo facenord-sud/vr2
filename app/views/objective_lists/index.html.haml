@@ -1,0 +1,16 @@
+%h1 Mes objectifs
+
+.row
+  .columns.large-6
+    =render partial: 'layouts/image', locals: {image: @objective.image, to_show: @objective.image.asset.url}
+  .columns.large-6
+    %table
+      %thead
+      %tbody
+        -@objective.objectives.each do |o|
+          %tr
+            %td= o.name
+            %td= o.description
+.row
+  .columns.small-12
+    %p= raw @objective.main
