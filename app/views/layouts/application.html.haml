@@ -21,6 +21,23 @@
   %title= full_title(yield(:title))
   = #favicon_link_tag 'collaide_icon.ico'
   = stylesheet_link_tag "application"
+
+  -if current_page?(objective_lists_path)
+    =stylesheet_link_tag 'objective'
+  -elsif current_page?(portfolios_path)
+    =stylesheet_link_tag 'portfolio'
+  -elsif current_page?(root_path)
+    =stylesheet_link_tag 'root'
+  -elsif current_page?(carreers_path)
+    =stylesheet_link_tag 'results'
+  -elsif current_page?(events_path) or current_page?(event_path(params[:id]||1))
+    =stylesheet_link_tag 'event'
+  -elsif current_page?(contact_path)
+    =stylesheet_link_tag 'contact'
+  -elsif current_page?(about_path)
+    =stylesheet_link_tag 'about'
+  -else
+    =stylesheet_link_tag 'default'
   = javascript_include_tag "vendor/modernizr"
   = csrf_meta_tag
 
