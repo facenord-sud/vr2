@@ -15,7 +15,7 @@
       get "about", to: "static_pages#about", as: "about"
       get "contact", to: "static_pages#contact", as: "contact"
       get "help", to: "static_pages#help", as: "help"
-
+      post 'contacts', to: 'contacts#create', as: 'contacts'
       root to: "static_pages#home"
 
       devise_for :user

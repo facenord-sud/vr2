@@ -5,3 +5,20 @@ body{
   -o-background-size: cover; /* pour Opera */
   background-size: cover; /* version standardisée */
 }
+
+.contain-to-grid .top-bar {
+  margin-top: 150%;
+}
+
+#welcome {
+  color: #ffffff;
+  margin-top: 300px;
+  h1 {
+    color: #ffffff;
+  }
+
+  #continue {
+    margin-top: 200px;
+    margin-left: 30%;
+  }
+}

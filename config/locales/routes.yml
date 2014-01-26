@@ -15,6 +15,10 @@ fr:
 
         portfolios: 'portrait'
 
-        contact: "contactez-nous"
-        about: "a-propos"
+        contact: "contactez-moi"
+        about: "sponsors"
         help: "aide"
+        events: 'agenda'
+        objective_lists: 'objectifs'
+        carreers: 'resultats'
+        galeries: 'galerie'

@@ -22,3 +22,9 @@ $ ->
         success: () ->
           loading = false
       })
+
+$ ->
+  $('#continue').click ->
+    $('html body').animate({scrollTop: $('#image').offset().top-400}, 'slow')
+    #$('.contain-to-grid .top-bar').css('margin-top', '300px')
+   ## $('#welcome').hide()

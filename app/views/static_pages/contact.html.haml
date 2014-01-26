@@ -1,3 +1,14 @@
-%h1= t "static_pages.contact.title"
-%blockquote Vous pouvez me contacter à l'adresse: '???? ou utiliser le formulaire ci-dessous
--#=simple_form_for
+-if flash[:success]
+  =link_to 'Page d\'accueil', root_path, class: 'button'
+  =link_to 'Formulaire de contact', contact_path, class: 'button'
+-else
+  %h1= t "static_pages.contact.title"
+  %blockquote
+    Vous avez quelque chose à me dire ?
+    %br
+    Vous pouvez me contacter à l'adresse: val.rota[at]hotmail.com ou utiliser le formulaire ci-dessous
+  =simple_form_for @contact do |f|
+    =f.input :title
+    =f.input :email
+    =f.input :body
+    =f.submit 'Envoyer', class: 'button success'
