@@ -19,24 +19,19 @@ Collaide::Application.configure do
   # For large-scale production use, consider using a caching reverse proxy like nginx, varnish or squid.
   # config.action_dispatch.rack_cache = true
 
-  # Disable Rails's static asset server (Apache or nginx will already do this).
-  config.serve_static_assets = false
+  # Compress JavaScripts and CSS
+  config.assets.compress = true
 
-  # Compress JavaScripts and CSS.
-  config.assets.js_compressor = :uglifier
-  # config.assets.css_compressor = :sass
+  # Don't fallback to assets pipeline if a precompiled asset is missed
+  config.assets.compile = true
 
-  # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
-
-  # Generate digests for assets URLs.
+  # Generate digests for assets URLs
   config.assets.digest = true
 
+  config.assets.initialize_on_precompile = false
   # Version of your assets, change this if you want to expire all your assets.
   config.assets.version = '1.0'
   
-  config.assets.compress = true
-
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
