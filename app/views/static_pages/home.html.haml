@@ -8,7 +8,7 @@
   .columns.small-4#home-right
     .panel
       %h4= t('.h1.next_event')
-      -if @event.nil?
+      -if @event.empty?
         %h5 Aucun prochain événement
       -else
         %h5= link_to @event.title, events_path

@@ -84,7 +84,6 @@ ActiveRecord::Schema.define(version: 20140122214428) do
   end
 
   create_table "portfolios", force: true do |t|
-    t.string   "image"
     t.text     "description"
     t.boolean  "published"
     t.datetime "created_at"
@@ -97,8 +96,8 @@ ActiveRecord::Schema.define(version: 20140122214428) do
     t.boolean  "published"
     t.string   "image"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "rails_admin_histories", force: true do |t|
@@ -108,8 +107,8 @@ ActiveRecord::Schema.define(version: 20140122214428) do
     t.string   "table"
     t.integer  "month",      limit: 2
     t.integer  "year",       limit: 8
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], name: "index_rails_admin_histories", using: :btree
@@ -145,8 +144,8 @@ ActiveRecord::Schema.define(version: 20140122214428) do
     t.string   "authentication_token"
     t.string   "name"
     t.string   "role"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

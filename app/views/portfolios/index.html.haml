@@ -1,7 +1,10 @@
 %h1 Portrait
 .row
   .columns.small-8
-    =image_tag(@portfolio.image.landscape.url)
+    -if @portfolio.nil?
+      %p Aucune Image
+    -else
+      =render partial: 'layouts/image', locals: {image: @portfolio.image, to_show: @portfolio.image.asset.url}
   .columns.small-4
     %h3= t('author')
     %p
@@ -31,4 +34,7 @@
 
 .row
   .columns.small-12
-    %p= @portfolio.description.html_safe
+    -if @portfolio.nil?
+      %p Aucune description
+    -else
+      %p= @portfolio.description.html_safe

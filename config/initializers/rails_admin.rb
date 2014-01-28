@@ -120,11 +120,6 @@ RailsAdmin.config do |config|
       field :image
       field :description, :wysihtml5
       field :published
-      field :user_id, :hidden do
-        default_value do
-          bindings[:view]._current_user.id
-        end
-      end
     end
   end
 
