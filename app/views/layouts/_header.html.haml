@@ -1,3 +1,12 @@
+#logo
+  =image_tag 'logo.png'
+-if current_page? root_path
+  .row#welcome
+    .columns.small-12
+      %h1 Bienvenue sur le site de Valentin Rota, Judoka
+      =link_to 'Continuer', '#', class: 'button large', id: 'continue'
+  #logo2
+    =image_tag 'logo.png'
 .row
   .columns
     .contain-to-grid

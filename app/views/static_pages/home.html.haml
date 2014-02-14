@@ -1,7 +1,7 @@
-%h1= t('static_pages.home.h1.title', app_name: t('app_name'))
-%dl.sub-nav
-  %dd.active.sticky
-    =link_to 'En-haut', '#', class: 'hide', id:'to-top'
+%h1= t('static_pages.home.h1.title')
+-#%dl.sub-nav
+-#  %dd.active.my-sticky
+-#    =link_to 'En-haut', '#', class: 'hide', id:'to-top'
 .row
   .columns.small-8#posts
     =render @posts

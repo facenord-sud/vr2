@@ -15,4 +15,11 @@
                     %legend= a_galerie.description
   .columns.large-6
     %h1 Vidéos
-
+    -if @videos.nil? or @videos.empty?
+      %p Pas de vidéos pour le moment
+    -else
+      %ul.small-block-grid-2
+        -@videos.each do |a_video|
+          %li
+            .flex-video
+              %iframe{width:  400, height: 300, src: a_video.url, allowfullscreen: true}

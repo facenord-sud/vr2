@@ -16,10 +16,13 @@ fr:
         author: &author Valentin Rota
     activerecord:
       models:
-        user: Utilisateur
-        portfolio: Portrait
-        post: Actualité
-        event: Evénement
+        user: Utilisateurs
+        portfolio: Portraits
+        post: Mini-Articles
+        event: Evénements
+        carreer: Médailles
+        result: Résultats
+        objective_list: Objectifs
         attributes:
           user:
             email: *email
@@ -28,6 +31,11 @@ fr:
             current_password: *current_password
             remember_me: *remember_me
             name: *name
+          post:
+            title: Titre
+            body: Texte
+            test_image: Image
+            published: Publié ?
     views:
         pagination:
           first: "&laquo; Premier"
@@ -52,7 +60,7 @@ fr:
     static_pages:
         home:
             h1:
-                title: Bienvenue sur %{app_name} !!!
+                title: Dernières nouvelles
                 published_by: "par %{author} il y a %{time}"
                 next_event: Prochain événement
                 the_event: " Du %{start} au %{end} à %{place}"

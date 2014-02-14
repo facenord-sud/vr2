@@ -28,3 +28,13 @@ $ ->
     $('html body').animate({scrollTop: $('#image').offset().top-400}, 'slow')
     #$('.contain-to-grid .top-bar').css('margin-top', '300px')
    ## $('#welcome').hide()
+
+#$ ->
+#  toTop = $(window).scrollTop()
+#  stickyPosition = $('.my-sticky').offset().top
+#  $(window).scroll ->
+##    if $(window).scrollTop() > $(document).height() - $(window).height() - $('.my-sticky').offset().top
+##      alert($(document).height() + ' ' + $(window).height()) #12888
+##      alert($(window).scrollTop()) #12834
+##      alert($('.my-sticky').offset().top) #2300.75
+#    $('.my-sticky').offset({top: 2600, left: 300})

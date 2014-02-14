@@ -42,11 +42,6 @@
   = csrf_meta_tag
 
 %body
-  -if current_page? root_path
-    .row#welcome
-      .columns.small-12
-        %h1 Bienvenue sur le site de Valentin Rota, Judoka.
-        =link_to 'Continuer !', '#', class: 'button radius round', id: 'continue'
   = render 'layouts/header'
   -#.row
     #breadcrumb.columns.small-12

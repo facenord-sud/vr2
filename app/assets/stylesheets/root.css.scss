@@ -1,24 +1,33 @@
 body{
   background: url(image_path('home.jpg')) no-repeat center fixed;
-  -webkit-background-size: cover; /* pour Chrome et Safari */
-  -moz-background-size: cover; /* pour Firefox */
-  -o-background-size: cover; /* pour Opera */
-  background-size: cover; /* version standardisée */
+  -webkit-background-size: contain; /* pour Chrome et Safari */
+  -moz-background-size: contain; /* pour Firefox */
+  -o-background-size: contain; /* pour Opera */
+  background-size: contain; /* version standardisée */
+  background-color: black;
+}
+
+#logo2 {
+  margin-top: 150%;
+  img{
+    max-height: 170px;
+    margin-left: 96px;
+  }
 }
 
 .contain-to-grid .top-bar {
-  margin-top: 150%;
+  margin-top: 130px;
 }
 
 #welcome {
   color: #ffffff;
-  margin-top: 300px;
+  margin-top: 50px;
   h1 {
     color: #ffffff;
   }
 
   #continue {
-    margin-top: 200px;
-    margin-left: 30%;
+    margin-left: 41%;
+    margin-top: 100px;
   }
 }
