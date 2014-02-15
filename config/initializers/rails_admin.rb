@@ -20,7 +20,6 @@ RailsAdmin.config do |config|
   # or for a dynamic name:
   # config.main_app_name = Proc.new { |controller| [Rails.application.engine_name.titleize, controller.params['action'].titleize] }
 
-   config.excluded_models << 'Objective'
    config.excluded_models << 'Contact'
 
   #  ==> Global show view settings
