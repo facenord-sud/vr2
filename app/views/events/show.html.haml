@@ -2,7 +2,7 @@
 -content_for :description, "#{@event.title} du #{l(@event.starting_at, format: :long)} au #{l(@event.ending_at, format: :long)}"
 -content_for :key_words, "agenda, #{@event.title}"
 .row
-  .columns.small-8
+  .columns.large-8.medium-7
     %h1= @event.title
     =link_to(image_tag(@event.image.url), @event.image.url, class: 'th') unless @event.image.url.nil?
     %h3
@@ -13,6 +13,6 @@
       à
       =@event.place
     %p= @event.description
-  .columns.small-4
+  .columns.large-4.medium-5
     =link_to 'Retour au calendrier', events_path, class: 'button'
     =render 'events/side'

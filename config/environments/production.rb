@@ -39,6 +39,15 @@ Collaide::Application.configure do
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
 
+  config.action_mailer.default_url_options = { :host => 'vps45540.ovh.net' }
+  config.action_mailer.smtp_settings = {
+      :address              => ENV['RAILS_MAIL_ADDRESS'],
+      :port                 => ENV['RAILS_MAIL_PORT'],
+      :user_name            => ENV['RAILS_MAIL_USER'],
+      :password             => ENV['RAILS_MAIL_PASSWORD'],
+      :authentication       => ENV['RAILS_MAIL_AUTH'],
+      :enable_starttls_auto => true  }
+
   # Set to :debug to see everything in the log.
   config.log_level = :info
 

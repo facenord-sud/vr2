@@ -5,12 +5,12 @@
         %a.left-off-canvas-toggle.button.secondary.small
           Bio
       %h1 Portrait
-      .columns.large-8
+      .columns.large-8.medium-7
         -if @portfolio.nil?
           %p Aucune Image
         -else
           =render partial: 'layouts/image', locals: {image: @portfolio.image, to_show: @portfolio.image.asset.url}
-      .columns.large-4.hide-for-small
+      .columns.large-4.medium-5.hide-for-small
         =render 'bio'
       %aside.left-off-canvas-menu.hide-for-large.show-for-small#vr-canvas
         .panel

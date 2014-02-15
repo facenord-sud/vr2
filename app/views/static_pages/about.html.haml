@@ -5,9 +5,11 @@
     .row
       .columns.small-12
         .panel
-          %h3 Banque Bonhôte
+          =link_to(image_tag('bonhote.png', alt: 'image manquante du logo Banque Bonhôte', title: 'Banque Bonhôte'), 'http://www.bonhote.ch/fr/', class: 'th')
+          %h3= link_to 'Banque Bonhôte', 'http://www.bonhote.ch/fr/'
         .panel
-          %h3 Les amis des cookies
+          =link_to(image_tag('cookie.png', alt: 'image manquante du logo Amis de Cookie', title: 'Amis de Cookie'), 'http://www.amisdecookie.ch', class: 'th')
+          %h3= link_to 'Amis de Cookie', 'http://www.amisdecookie.ch'
   .columns.large-6
     =image_tag 'sponsor.jpg', alt: 'image manquante de Valentin Rota', title: 'Valentin Rota remercie ses sponsors et donateurs'
 .row

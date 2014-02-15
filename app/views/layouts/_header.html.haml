@@ -27,12 +27,14 @@
               %li= link_to 'admin', rails_admin_path
             %li{class: set_active(portfolios_path)}= link_to t('header.portfolio'), portfolios_path
             -custom_class = 'active' if current_page?(events_path) or current_page?(event_path(params[:id]||1))
-            %li{class: custom_class}= link_to 'Agenda', events_path
-            %li.has-dropdown.not-click
+            %li{class: custom_class}= link_to 'Calendrier', events_path
+            -custom_class_obj = 'active' if current_page?(objective_lists_path) or request.fullpath.start_with?('/resultat')
+            -custom_class_result = 'active' if request.fullpath.start_with?('/resultat')
+            %li.has-dropdown.not-click{class: custom_class_obj}
               = link_to t('header.judo'), '#'
               %ul.dropdown
-                %li= link_to 'Objectifs', objective_lists_path
-                %li= link_to 'Résultats', carreers_path
+                %li{class: set_active(objective_lists_path)}= link_to 'Objectifs', objective_lists_path
+                %li{class: custom_class_result}= link_to 'Résultats', carreers_path
             %li{class: set_active(galeries_path)}= link_to 'Galerie', galeries_path
             %li{class: set_active(contact_path)}= link_to 'Contact', contact_path
             %li{class: set_active(about_path)}= link_to 'Sponsors', about_path

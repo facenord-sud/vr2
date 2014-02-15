@@ -5,7 +5,7 @@
         %a.left-off-canvas-toggle.button.secondary.small
           A ne pas manquer
       %h1 Calendrier
-      .columns.large-8
+      .columns.large-8.medium-7
         %table
           -@events.each do |an_event|
             %tr
@@ -18,7 +18,7 @@
               name: an_event.title,
               place: an_event.place,
               description: an_event.description), an_event)
-      .columns.large-4.small-12.hide-for-small
+      .columns.large-4.medium-5.small-12.hide-for-small
         .panel
           -if !@sticky.is_a? Event and @sticky.empty?
             %p Aucun événement important à venir

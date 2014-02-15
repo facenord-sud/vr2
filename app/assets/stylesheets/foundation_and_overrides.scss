@@ -3,7 +3,7 @@
 
 .contain-to-grid .top-bar {
   margin-top: emCalc(150px);
-  @media #{$small-only} {
+  @media #{$xmedium-down} {
     margin-top: 0px;
   }
    .active-title {
@@ -11,7 +11,7 @@
   }
 }
 
-@media #{$small-only} {
+@media #{$xmedium-down} {
   #image {
     background-color: #ffffff;
   }
@@ -26,7 +26,7 @@
   background-color: white;
   padding-left: emCalc(20px);
   padding-right: emCalc(20px);
-  @media #{$small-only} {
+  @media #{$xmedium-down} {
     padding-left: 0px;
     padding-right: 0px;
   }
@@ -98,9 +98,11 @@
   img{
     max-height: rem-calc(170px);
     @media #{$xmedium-up} {margin-left: rem-calc(96px);}
+    @media #{$xmedium-down} {
+      margin-left: rem-calc(10px);
+    }
     @media #{$small-only} {
       max-width: rem-calc(300px);
-      margin-left: rem-calc(10px);
     }
     margin-top: rem-calc(50px);
     @media #{$small-only} {
