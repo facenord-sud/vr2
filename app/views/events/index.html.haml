@@ -15,7 +15,7 @@
           description: an_event.description), an_event)
   .columns.small-4
     .panel
-      -if @sticky.empty?
+      -if !@sticky.is_a? Event and @sticky.empty?
         %p Aucun événement important à venir
       -else
         %h4= link_to @sticky.title, @sticky

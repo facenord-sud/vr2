@@ -4,11 +4,13 @@
   .row#welcome
     .columns.small-12
       %h1 Bienvenue sur le site de Valentin Rota, Judoka
-      =link_to 'Continuer', '#', class: 'button large', id: 'continue'
+      .row
+        .columns.small-7.small-centered
+          =link_to 'Continuer', '#', class: 'button large radius', id: 'continue'
   #logo2
     =image_tag 'logo.png'
 .row
-  .columns
+  .columns#top-bar
     .contain-to-grid
       %nav.top-bar{:'data-topbar' => true}
         %ul.title-area
@@ -42,4 +44,4 @@
                   %li= link_to t("header.user.profil"), current_user
                   %li= link_to t("header.user.edit"), edit_user_registration_path
                   %li.divider
-                  %li= link_to t("header.user.logout"), destroy_user_session_path, method: :delete
+                %li= link_to t("header.user.logout"), destroy_user_session_path, method: :delete

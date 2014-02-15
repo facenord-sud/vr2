@@ -1,3 +1,6 @@
+-content_for :title, @event.title+ ' - Agenda'
+-content_for :description, "#{@event.title} du #{l(@event.starting_at, format: :long)} au #{l(@event.ending_at, format: :long)}"
+-content_for :key_words, "agenda, #{@event.title}"
 .row
   .columns.small-8
     %h1= @event.title

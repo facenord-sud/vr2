@@ -14,15 +14,17 @@ fr:
         remember_me: &remember_me Se souvenir de moi
         name: &name Pseudo
         author: &author Valentin Rota
+    default_description_meta: Bienvenue sur le site de Valentin Rota, Judoka.
+    default_key_words: Valentin Rota, Judoka, Judo, sportif
     activerecord:
       models:
+        objective_list: Objectifs
         user: Utilisateurs
         portfolio: Portraits
         post: Mini-Articles
         event: Evénements
         carreer: Médailles
         result: Résultats
-        objective_list: Objectifs
         attributes:
           user:
             email: *email
@@ -36,6 +38,8 @@ fr:
             body: Texte
             test_image: Image
             published: Publié ?
+          contact:
+            title: Titre
     views:
         pagination:
           first: "&laquo; Premier"
@@ -93,3 +97,48 @@ fr:
       october: Octobre
       november: Novembre
       december: Décembre
+    simple_form:
+      labels:
+        contact:
+          title: Titre
+          email: Votre adresse de couriel
+          body: Texte
+    meta:
+      static_pages:
+        home:
+          title_page: Bienvenue ! Découvrez mon portrait, mes objectifs, mon agenda et plein d'autres choses !
+          description: Découvrez les dernières nouvelles de Valentin Rota
+          key_words: page d'accueil, nouvelles, dernières nouvelles
+        contact:
+          title_page: Contact
+          description: Contacter Valentin Rota par e-mail ou avec le formulaire
+          key_words: contact, email, e-mail
+        about:
+          title_page: Sponsors
+          description: Valentin Rota remercie tous ses sponsors et donnateurs.
+          key_words: banque bonhôte, amis du cookies, sponsors
+      portfolios:
+        index:
+          title_page: Portrait
+          description: Portrait de Valentin Rota
+          key_words: portrait, cv, club, taille
+      events:
+        index:
+          title_page: Agenda
+          description: Agenda de Valentin Rota.
+          key_words: agenda, événements à venir, compétition
+      objective_lists:
+        index:
+          title_page: Objectifs
+          description: Objectif Rio 2016. Liste de mes objectifs
+          key_words: Rio, Rio de janiero, 2016, objectifs, jo, jeux olympiques
+      carreers:
+        index:
+          title_page: Résultats
+          description: Résultats en Judo de Valentin Rota
+          key_words: résultats, médailles, compétitions
+      galeries:
+        index:
+          title_page: Galerie d'images et vidéos
+          description: Galeries d'images et vidéos de Valentin Rota en action.
+          key_words: galerie, image, vidéo

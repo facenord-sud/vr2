@@ -24,8 +24,12 @@ $ ->
       })
 
 $ ->
+  if $('#is-mobile').css('display') == 'block'
+    down = 235
+  else
+    down = 400
   $('#continue').click ->
-    $('html body').animate({scrollTop: $('#image').offset().top-400}, 'slow')
+    $('html body').animate({scrollTop: $('#image').offset().top-down}, 'slow')
     #$('.contain-to-grid .top-bar').css('margin-top', '300px')
    ## $('#welcome').hide()
 
