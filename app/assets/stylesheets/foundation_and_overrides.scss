@@ -11,6 +11,10 @@
   }
 }
 
+#image {
+  margin-bottom: rem-calc(100px);
+}
+
 @media #{$xmedium-down} {
   #image {
     background-color: #ffffff;
