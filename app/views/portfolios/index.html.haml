@@ -1,33 +1,20 @@
-%h1 Portrait
 .row
-  .columns.small-8
-    -if @portfolio.nil?
-      %p Aucune Image
-    -else
-      =render partial: 'layouts/image', locals: {image: @portfolio.image, to_show: @portfolio.image.asset.url}
-  .columns.small-4
-    %h3= t('author')
-    %p
-      %strong Prénom, Nom :
-      Valentin Rota
-    %p
-      %strong Date de naissance :
-      14 janvier 1991
-    %p
-      %strong Domicile :
-      Biel/Bienne, Suisse
-    %p
-      %strong Taille :
-      167cm
-    %p
-      %strong Club:
-      =link_to 'Judo Club Biel-Nidau', 'http://www.jcbn.ch'
-    %p
-      %strong Coach :
-      Dirk Radszat
-    %p
-      %strong Hobbies :
-      Sports en général, cinéma, amis.
+  .off-canvas-wrap
+    .inner-wrap
+      .hide-for-large.show-for-small
+        %a.left-off-canvas-toggle.button.secondary.small
+          Bio
+      %h1 Portrait
+      .columns.large-8
+        -if @portfolio.nil?
+          %p Aucune Image
+        -else
+          =render partial: 'layouts/image', locals: {image: @portfolio.image, to_show: @portfolio.image.asset.url}
+      .columns.large-4.hide-for-small
+        =render 'bio'
+      %aside.left-off-canvas-menu.hide-for-large.show-for-small#vr-canvas
+        .panel
+          =render 'bio'
 
 .row
   .columns.small-12

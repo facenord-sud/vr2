@@ -124,9 +124,9 @@ fr:
           key_words: portrait, cv, club, taille
       events:
         index:
-          title_page: Agenda
-          description: Agenda de Valentin Rota.
-          key_words: agenda, événements à venir, compétition
+          title_page: Calendrier
+          description: Calendrier de Valentin Rota.
+          key_words: calendrier, événements à venir, compétition
       objective_lists:
         index:
           title_page: Objectifs

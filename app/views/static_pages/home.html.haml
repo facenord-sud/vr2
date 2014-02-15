@@ -1,20 +1,22 @@
-%h1= t('static_pages.home.h1.title')
+
 -#%dl.sub-nav
 -#  %dd.active.my-sticky
 -#    =link_to 'En-haut', '#', class: 'hide', id:'to-top'
 .row
-  .columns.small-8#posts
-    =render @posts
-  .columns.small-4#home-right
-    .panel
-      %h4= t('.h1.next_event')
-      -if !@event.is_a? Event and @event.empty?
-        %h5 Aucun prochain événement
-      -else
-        %h5= link_to @event.title, events_path
-        %p= t('.h1.the_event', start: l(@event.starting_at, format: :long), end: l(@event.ending_at, format: :long), place: @event.place)
-        =link_to(image_tag(@event.image.thumb.url), events_path, class: 'th') unless @event.image.url.nil?
-        %h4 Rejoinez Valentin Rota sur Facebook
-        <iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Frotavalentin&amp;width&amp;layout=standard&amp;action=like&amp;show_faces=true&amp;share=true&amp;height=80&amp;appId=420500041382733" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:80px;" allowTransparency="true"></iframe>
+  .off-canvas-wrap
+    .inner-wrap
+      .hide-for-large.show-for-small
+        %a.left-off-canvas-toggle.button.secondary.small
+          Prochain événement
+      %h1
+        = t('static_pages.home.h1.title')
+      .columns.small-8#posts
+        =render @posts
+      .columns.small-4#home-right.hide-for-small
+        .panel
+          =render 'aside'
+      %aside.left-off-canvas-menu.hide-for-large.show-for-small#vr-canvas
+        .panel
+          =render 'aside'
 #paginate
   =paginate @posts
