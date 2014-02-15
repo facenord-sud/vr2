@@ -20,7 +20,7 @@ class Event < ActiveRecord::Base
   scope :past, -> { where('events.starting_at <= ?', Time.zone.now).order('starting_at DESC').all }
 
   validates_presence_of :title
-  validates_presence_of :description
+  #validates_presence_of :description
   validates_presence_of :starting_at
   validates_presence_of :ending_at
   validates_presence_of :place
