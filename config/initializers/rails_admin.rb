@@ -73,7 +73,7 @@ RailsAdmin.config do |config|
     edit do
       field :title
       field :asset do
-      jcrop_options aspectRatio: 500.0/320.0
+      jcrop_options aspectRatio: 700.0/400.0
         fit_image true
       end
       field :legend
