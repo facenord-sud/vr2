@@ -63,7 +63,7 @@ RailsAdmin.config do |config|
   config.model Portfolio do
     edit do
       field :image
-      field :description, :wysihtml5
+      field :description, :code_mirror
       field :published
     end
   end
