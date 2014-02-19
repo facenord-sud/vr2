@@ -43,6 +43,11 @@ class ImageUploader < CarrierWave::Uploader::Base
      process resize_to_fill: [50, 50]
    end
 
+   version :portrait do
+     process :rails_admin_crop
+     process resize_to_fill: [500,320]
+   end
+
 
   # Create different versions of your uploaded files:
   # version :thumb do
