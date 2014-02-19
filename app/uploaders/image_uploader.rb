@@ -45,7 +45,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
    version :portrait do
      process :rails_admin_crop
-     process resize_to_fill: [500,320]
+     process resize_to_fill: [700, 400]
    end
 
 
