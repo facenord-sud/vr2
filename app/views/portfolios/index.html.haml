@@ -9,7 +9,7 @@
         -if @portfolio.nil?
           %p Aucune Image
         -else
-          =render partial: 'layouts/image', locals: {image: @portfolio.image, to_show: @portfolio.image.asset.landscape.url}
+          =render partial: 'layouts/image', locals: {image: @portfolio.image, to_show: @portfolio.image.asset.portrait.url}
       .columns.large-4.medium-5.hide-for-small
         =render 'bio'
       %aside.left-off-canvas-menu.hide-for-large.show-for-small#vr-canvas
