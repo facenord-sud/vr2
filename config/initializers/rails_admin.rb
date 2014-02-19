@@ -72,7 +72,7 @@ RailsAdmin.config do |config|
     configure :asset, :jcrop
     edit do
       field :title
-      field :avatar #do
+      field :asset #do
         #jcrop_options minSize: [700, 400], maxSize: [700, 400]
       #end
       field :legend
