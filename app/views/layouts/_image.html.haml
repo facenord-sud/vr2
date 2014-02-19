@@ -1,5 +1,6 @@
 .image.th
-  =link_to image_tag(to_show, title: image.title, alt: image.legend), image.asset.url, class: 'th'
+  -image_url = local_assigns.fetch :version, image.asset.url
+  =link_to image_tag(to_show, title: image.title, alt: image.legend), image_url, class: 'th'
   .legend
     %h5= image.title
     %legend= image.legend
