@@ -44,7 +44,7 @@ gem 'pg'
 
 gem "mini_magick", "~> 3.7.0"
 gem 'rails_admin_jcrop'
-gem 'codemirror-rails'
+gem 'ckeditor'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
