@@ -1,7 +1,8 @@
 body{
-    background: url(image_path('objectif.jpg')) no-repeat center fixed;
+    background: url(image_path('objectif.jpg')) no-repeat top fixed;
     -webkit-background-size: contain; /* pour Chrome et Safari */
     -moz-background-size: contain; /* pour Firefox */
     -o-background-size: contain; /* pour Opera */
     background-size: contain; /* version standardisée */
+  background-color: black;
 }
