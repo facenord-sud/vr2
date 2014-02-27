@@ -6,9 +6,11 @@
   %blockquote
     Vous avez quelque chose à me dire ?
     %br
-    Vous pouvez me contacter à l'adresse: val.rota[at]hotmail.com ou utiliser le formulaire ci-dessous
+    Vous pouvez me contacter à l'adresse: val.rota[at]hotmail.com, utiliser le formulaire ci-dessous ou
+    =link_to 'parlez-moi sur facebook', 'https://www.facebook.com/val.rota'
   =simple_form_for @contact do |f|
     =f.input :title
     =f.input :email
     =f.input :body
     =f.submit 'Envoyer', class: 'button success'
+  %p Vous recherchez le webmaster ? Contactez Numa de Montmollin (facenord.sud@gmail.com)

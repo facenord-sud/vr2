@@ -5,8 +5,11 @@
       -@galeries.each do |a_galerie|
         %li
           %ul.clearing-thumbs.clearing-feature{:'data-clearing' => true}
+            -cover = false
             -a_galerie.images.each_with_index do |an_image, index|
-              -featured = 'clearing-featured-img image th' if index == 0
+              -if an_image.to_cover? or(!cover and index+1 == a_galerie.images.size)
+                -featured = 'clearing-featured-img image th'
+                -cover = true
               %li{class: featured}
                 =link_to(image_tag(an_image.asset.url, :'data-caption' => an_image.title+' '+an_image.legend), an_image.asset.url, class: 'th')
                 -if index == 0
@@ -22,4 +25,5 @@
         -@videos.each do |a_video|
           %li
             .flex-video
-              %iframe{width:  400, height: 300, src: a_video.url, allowfullscreen: true}
+              -#%iframe{width:  400, height: 300, src: a_video.url, allowfullscreen: true}
+              = a_video.url

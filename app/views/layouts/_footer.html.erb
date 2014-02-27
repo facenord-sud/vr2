@@ -1,10 +1,8 @@
+<hr/>
 <footer>
   <ul class="inline-list">
-    <li>
-      <%= link_to "Sponsors", about_path %>
-    </li>
-    <li>
-      <%= link_to "Contact", contact_path %>
-    </li>
+    <% Link.all.each do |l| %>
+    <li><%= link_to l.title, l.url %></li>
+    <% end %>
   </ul>
 </footer>

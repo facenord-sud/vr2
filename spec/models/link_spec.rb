@@ -1,15 +1,16 @@
 # == Schema Information
 #
-# Table name: objective_lists
+# Table name: links
 #
 #  id         :integer          not null, primary key
-#  main       :text
+#  url        :string(255)
+#  title      :string(255)
 #  created_at :datetime
 #  updated_at :datetime
 #
 
 require 'spec_helper'
 
-describe ObjectiveList do
+describe Link do
   pending "add some examples to (or delete) #{__FILE__}"
 end

@@ -68,6 +68,7 @@ fr:
                 published_by: "par %{author} il y a %{time}"
                 next_event: Prochain événement
                 the_event: " Du %{start} au %{end} à %{place}"
+                the_event_d: " Le %{start} à %{place}"
         about:
             title: A propos
             text: Ce site a été réalisé dans le but de d'essayer le framework ruby on rails pour collaide. Construit en moins de deux jours
@@ -82,6 +83,7 @@ fr:
     events:
       index:
         print_event: "Du %{start} au %{end}, %{name} à %{place}. %{description}"
+        print_event_od: "Le %{date}, %{name} à %{place}. %{description}"
         sticky:
           sub_header: "Du %{start} au %{end} à %{place}"
     months:
@@ -103,6 +105,8 @@ fr:
           title: Titre
           email: Votre adresse de couriel
           body: Texte
+        news_letter:
+          email: Votre adresse de couriel
     meta:
       static_pages:
         home:

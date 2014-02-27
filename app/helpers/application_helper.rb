@@ -24,7 +24,42 @@ module ApplicationHelper
     end
   end
 
+  def event_name(event, params: {}, t: 'events.index.print_event')
+    if params.empty?
+      params = {name: event.title, place: event.place, description: event.description}
+    end
+    if event.start_year == event.end_year
+      if event.start_month == event.end_month
+        if event.one_day?
+          # event sur un jour
+          t("#{t}_od",
+                    date: l(event.starting_at, format: '%d %B'),
+                    name: event.title,
+                    place: event.place,
+                    description: event.description)
+        else
+          #event sur le même mois
+          event_t_name event, params, start_format: '%d', end_format: '%d %B', t: t
+        end
+      else
+        #event entre deux mois sur une année
+        event_t_name event, params, start_format: '%d %B', end_format: '%d %B', t: t
+      end
+    else
+      #event entre deux années
+      event_t_name event, params, t: t
+    end
+  end
+
   private
+
+    def event_t_name(event, params, start_format: :long, end_format: :long, t: 'events.index.print_event')
+      params[:start] = l(event.starting_at, format: start_format)
+      params[:end] = l(event.ending_at, format: end_format)
+      t(t, params)
+    end
+
+
     def find_t_for_meta(meta, options={})
       action_name = params[:action]
       action_name = 'new' if action_name == 'create'

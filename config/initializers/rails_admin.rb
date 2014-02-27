@@ -27,7 +27,9 @@ RailsAdmin.config do |config|
        field :title
        field :body, :wysihtml5
        field :test_image
+       field :video
        field :published
+       field :to_front
        field :user_id, :hidden do
          default_value do
            bindings[:view]._current_user.id
@@ -77,6 +79,7 @@ RailsAdmin.config do |config|
         fit_image true
       end
       field :legend
+      field :to_cover
     end
 
     list do
@@ -94,6 +97,15 @@ RailsAdmin.config do |config|
        field :main, :wysihtml5
        field :image
        field :objectives
+     end
+   end
+
+   config.model Video do
+     edit do
+       field :url
+       field :title
+       field :description
+       field :to_gallery
      end
    end
 

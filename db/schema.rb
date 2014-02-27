@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140214212337) do
+ActiveRecord::Schema.define(version: 20140227220903) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,9 +65,25 @@ ActiveRecord::Schema.define(version: 20140214212337) do
     t.datetime "updated_at"
     t.integer  "galery_id"
     t.integer  "objective_list_id"
+    t.integer  "sponsor_id"
+    t.boolean  "to_cover",          default: false
   end
 
   add_index "images", ["galery_id"], name: "index_images_on_galery_id", using: :btree
+  add_index "images", ["sponsor_id"], name: "index_images_on_sponsor_id", using: :btree
+
+  create_table "links", force: true do |t|
+    t.string   "url"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "news_letters", force: true do |t|
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "objective_lists", force: true do |t|
     t.text     "main"
@@ -98,7 +114,11 @@ ActiveRecord::Schema.define(version: 20140214212337) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "to_front",   default: false
+    t.integer  "video_id"
   end
+
+  add_index "posts", ["video_id"], name: "index_posts_on_video_id", using: :btree
 
   create_table "rails_admin_histories", force: true do |t|
     t.text     "message"
@@ -118,6 +138,14 @@ ActiveRecord::Schema.define(version: 20140214212337) do
     t.integer  "point"
     t.string   "name"
     t.string   "comp"
+    t.string   "category"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sponsors", force: true do |t|
+    t.string   "title"
+    t.string   "url"
     t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -155,6 +183,7 @@ ActiveRecord::Schema.define(version: 20140214212337) do
     t.string   "url"
     t.string   "title"
     t.string   "description"
+    t.boolean  "to_gallery"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

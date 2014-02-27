@@ -1,5 +1,32 @@
 <div class="row">
   <div class="small-12 large-6 columns">
+    <h1>Résultats</h1>
+
+    <table>
+      <thead>
+      <tr>
+        <th>Date</th>
+        <th>Résultat</th>
+        <th>Nom</th>
+        <th>Comp</th>
+        <th>Catégorie</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @results.each do |result| %>
+          <tr>
+            <td><%= l(result.date, format: :short) %></td>
+            <td><%= result.point %></td>
+            <td><%= result.name %></td>
+            <td><%= result.comp %></td>
+            <td><%= result.category %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="small-12 large-6 columns">
     <h1>Médailles</h1>
     <table>
       <thead>
@@ -18,33 +45,6 @@
             <td><%= carreer.gold %></td>
             <td><%= carreer.silver %></td>
             <td><%= carreer.bronze %></td>
-          </tr>
-      <% end %>
-      </tbody>
-    </table>
-  </div>
-  <div class="small-12 large-6 columns">
-    <h1>Résultats</h1>
-
-    <table>
-      <thead>
-      <tr>
-        <th>Date</th>
-        <th>Résultat</th>
-        <th>Nom</th>
-        <th>Comp</th>
-        <th>Catégorie</th>
-      </tr>
-      </thead>
-
-      <tbody>
-      <% @results.each do |result| %>
-          <tr>
-            <td><%= result.date %></td>
-            <td><%= result.point %></td>
-            <td><%= result.name %></td>
-            <td><%= result.comp %></td>
-            <td><%= result.category %></td>
           </tr>
       <% end %>
       </tbody>

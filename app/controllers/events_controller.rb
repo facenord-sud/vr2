@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.future
+    @events = Event.future_by_year
     @sticky = Event.sticky
     @old_events = Event.past_by_month
 

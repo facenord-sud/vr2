@@ -17,7 +17,7 @@
       get "help", to: "static_pages#help", as: "help"
       post 'contacts', to: 'contacts#create', as: 'contacts'
       root to: "static_pages#home"
-
+      resources :news_letters, only: [:index, :create]
       devise_for :user
     end
     mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'

@@ -1,3 +1,19 @@
+# == Schema Information
+#
+# Table name: posts
+#
+#  id         :integer          not null, primary key
+#  title      :string(255)
+#  body       :text
+#  published  :boolean
+#  image      :string(255)
+#  user_id    :integer
+#  created_at :datetime
+#  updated_at :datetime
+#  to_front   :boolean          default(FALSE)
+#  video_id   :integer
+#
+
 class Post < ActiveRecord::Base
 
   belongs_to :user
@@ -5,14 +21,15 @@ class Post < ActiveRecord::Base
   #mount_uploader :image, ImageUploader
 
   has_one :test_image, class_name: 'Image', dependent: :destroy
+  belongs_to :video
 
   accepts_nested_attributes_for :test_image, allow_destroy: true
 
   scope :published, -> { where(published: true) }
+  scope :a_la_une, -> {where(published: true, to_front: true)}
 
   validates_presence_of :title
   validates_presence_of :body
-  validates_presence_of :test_image
 
   def start_year
     created_at.year

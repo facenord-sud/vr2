@@ -3,20 +3,33 @@
 -#  %dd.active.my-sticky
 -#    =link_to 'En-haut', '#', class: 'hide', id:'to-top'
 .row
-  .off-canvas-wrap
-    .inner-wrap
-      .hide-for-large.show-for-small
-        %a.left-off-canvas-toggle.button.small
-          Prochain événement
-      %h1
-        = t('static_pages.home.h1.title')
-      .columns.large-8.medium-8#posts
+
+  .columns.large-8.medium-8#posts
+    -if !@to_front.nil?
+      .row
+        .columns.small-12
+          %h1 A la une
+          %ul.example-orbit-content{:'data-orbit'=>true}
+            -@to_front.each do |tf|
+              %li{:'data-orbit-slide' => tf.title}
+                %div
+                  %h3= tf.title
+                  %h6.subheader= t('static_pages.home.h1.published_by', author: t('author'), time: time_ago_in_words(tf.updated_at))
+                  -if tf.test_image.present?
+                    =render partial: 'layouts/image', locals: {image: tf.test_image, to_show: tf.test_image.asset.portrait.url}
+                  -elsif tf.video.present?
+                    .flex-video
+                      = tf.video.url
+                  %p= tf.body.html_safe
+        .columns.small-12#home-right.show-for-small
+          .panel
+            =render 'aside'
+    .row
+      .columns.small-12
+        %h1= t('static_pages.home.h1.title')
         =render @posts
-      .columns.small-4#home-right.hide-for-small
-        .panel
-          =render 'aside'
-      %aside.left-off-canvas-menu.hide-for-large.show-for-small#vr-canvas
-        .panel
-          =render 'aside'
+  .columns.small-4#home-right.hide-for-small
+    .panel
+      =render 'aside'
 #paginate
   =paginate @posts

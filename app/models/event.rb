@@ -1,3 +1,20 @@
+# == Schema Information
+#
+# Table name: events
+#
+#  id          :integer          not null, primary key
+#  starting_at :date
+#  ending_at   :date
+#  title       :string(255)
+#  description :text
+#  user_id     :integer
+#  created_at  :datetime
+#  updated_at  :datetime
+#  to_front    :boolean
+#  image       :string(255)
+#  place       :string(255)
+#
+
 class Event < ActiveRecord::Base
   #attr_accessible :description, :ending_at, :starting_at, :title
 
@@ -13,7 +30,7 @@ class Event < ActiveRecord::Base
   ) }
   scope :next, -> { where('events.starting_at >= ?', Time.zone.now).order('starting_at ASC').first }
 
-  scope :future, -> { where('events.starting_at >= ? OR events.ending_at >= ?', Time.zone.now, Time.zone.now).order('starting_at ASC').all }
+  scope :future, -> { where('events.starting_at >= ? OR events.ending_at >= ?', Time.zone.now, Time.zone.now).order('starting_at ASC') }
 
   scope :sticky, -> { where(to_front: true).order('updated_at DESC').first }
 
@@ -41,6 +58,33 @@ class Event < ActiveRecord::Base
 
   def start_year
     starting_at.year
+  end
+
+  def end_year
+    ending_at.year
+  end
+
+  def end_month
+    ending_at.month
+  end
+
+  def one_day?
+    starting_at == ending_at
+  end
+
+  def self.future_by_year
+    events = self.future
+    return [] if events.empty?
+    year = events.first.start_year
+    events_to_return = { year => {}}
+    events.each do |an_event|
+      if year != an_event.start_year
+        year = an_event.start_year
+        events_to_return[year] = {}
+      end
+      events_to_return[an_event.start_year][an_event.id] = an_event
+    end
+    events_to_return
   end
 
   def self.past_by_month

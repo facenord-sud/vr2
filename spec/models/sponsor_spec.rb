@@ -1,15 +1,17 @@
 # == Schema Information
 #
-# Table name: objective_lists
+# Table name: sponsors
 #
 #  id         :integer          not null, primary key
-#  main       :text
+#  title      :string(255)
+#  url        :string(255)
+#  category   :string(255)
 #  created_at :datetime
 #  updated_at :datetime
 #
 
 require 'spec_helper'
 
-describe ObjectiveList do
+describe Sponsor do
   pending "add some examples to (or delete) #{__FILE__}"
 end

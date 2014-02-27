@@ -4,14 +4,52 @@
   .columns.large-6.medium-6
     .row
       .columns.small-12
-        .panel
-          =link_to(image_tag('bonhote.png', alt: 'image manquante du logo Banque Bonhôte', title: 'Banque Bonhôte'), 'http://www.bonhote.ch/fr/', class: 'th')
-          %h3= link_to 'Banque Bonhôte', 'http://www.bonhote.ch/fr/'
-        .panel
-          =link_to(image_tag('cookie.png', alt: 'image manquante du logo Amis de Cookie', title: 'Amis de Cookie'), 'http://www.amisdecookie.ch', class: 'th')
-          %h3= link_to 'Amis de Cookie', 'http://www.amisdecookie.ch'
+        -Sponsor.where(category: :gold).each do |p|
+          .panel
+            =link_to(image_tag(p.image.asset.url, width: 460, height: 263), p.url, class: 'th')
+            %h3= link_to p.title, p.url
   .columns.large-6.medium-6
     =image_tag 'sponsor.jpg', alt: 'image manquante de Valentin Rota', title: 'Valentin Rota remercie ses sponsors et donateurs'
+.row
+  -silver =  Sponsor.where(category: :silver)
+  -if silver.empty?
+    -class_p = 'columns large-8 medium-8 small-12'
+    -p_w = 648
+    -p_h = 370
+  -else
+    -class_p = 'columns large-5 medium-5 small-12'
+    -p_w = 378
+    -p_h = 216
+  .div{class: class_p}
+    .panel
+      %h4 Partenaires
+      -Sponsor.where(category: :partner).each do |p|
+        =link_to(image_tag(p.image.asset.url, width: p_w, height: p_h), p.url)
+        %h5= link_to p.title, p.url
+        %hr
+  -unless silver.empty?
+    .columns.large-4.medium-4.small-12
+      .panel
+        %h4 Sponsors Argent
+        -silver.each do |p|
+          =link_to(image_tag(p.image.asset.url, width: 288, height: 116), p.url)
+          %h5= link_to p.title, p.url
+          %hr
+  -if silver.empty?
+    -class_s = 'columns large-4 medium-4 small-12'
+    -width = 288
+    -height = 116
+  -else
+    -class_s = 'columns large-3 medium-3 small-12'
+    -width = 216
+    -height = 198
+  .div{class: class_s}
+    .panel
+      %h4 Sponsors Bronze
+      -Sponsor.where(category: :bronze).each do |p|
+        =link_to(image_tag(p.image.asset.url, width: width, height: height), p.url)
+        %h5= link_to p.title, p.url
+        %hr
 .row
   .columns.small-12
     %h4 Suivez et soutenez vous aussi Valentin dans son projet "Go to Rio de Janeiro"!

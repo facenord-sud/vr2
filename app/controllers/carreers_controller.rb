@@ -5,7 +5,7 @@ class CarreersController < ApplicationController
   # GET /carreers.json
   def index
     @carreers = Carreer.all
-    @results = Result.all
+    @results = Result.order('results.date DESC').all
   end
 
   # GET /carreers/1

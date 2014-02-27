@@ -4,6 +4,7 @@ class CreateVideos < ActiveRecord::Migration
       t.string :url
       t.string :title
       t.string :description
+      t.boolean :to_gallery
 
       t.timestamps
     end

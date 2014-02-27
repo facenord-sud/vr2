@@ -61,6 +61,9 @@ GEM
     childprocess (0.3.6)
       ffi (~> 1.0, >= 1.0.6)
     chunky_png (1.2.9)
+    ckeditor (4.0.10)
+      mime-types
+      orm_adapter (~> 0.5.0)
     codemirror-rails (3.16)
       railties (>= 3.0, < 5)
     coderay (1.1.0)
@@ -232,6 +235,10 @@ GEM
       remotipart (~> 1.0)
       safe_yaml (~> 0.9)
       sass-rails (~> 4.0)
+    rails_admin_jcrop (1.2.1)
+      mini_magick
+      rails (>= 3.0.0)
+      rails_admin (>= 0.3.0)
     railties (4.0.0)
       actionpack (= 4.0.0)
       activesupport (= 4.0.0)
@@ -319,6 +326,7 @@ DEPENDENCIES
   capybara (= 1.1.2)
   carrierwave
   childprocess (= 0.3.6)
+  ckeditor
   codemirror-rails
   coffee-rails (~> 4.0)
   coffee-script-source
@@ -352,6 +360,7 @@ DEPENDENCIES
   rails (= 4.0.0)
   rails-i18n
   rails_admin (~> 0.5.0)
+  rails_admin_jcrop
   rest-client (~> 1.6.7)
   route_translator
   rspec-rails (= 2.11.0)

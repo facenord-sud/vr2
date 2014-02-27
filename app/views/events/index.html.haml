@@ -6,25 +6,23 @@
           A ne pas manquer
       %h1 Calendrier
       .columns.large-8.medium-7
-        %table
-          -@events.each do |an_event|
-            %tr
-              %td
-                =link_to image_tag(an_event.image.url, class: 'events-image'), an_event, class: 'th'
-              %td
-                = link_to(t('events.index.print_event',
-              start: l(an_event.starting_at, format: :long),
-              end: l(an_event.ending_at, format: :long),
-              name: an_event.title,
-              place: an_event.place,
-              description: an_event.description), an_event)
+        -@events.each do |year, events|
+          %h5= year
+          %table
+            -events.each do |id, an_event|
+              %tr
+                %td
+                  =link_to image_tag(an_event.image.url, class: 'events-image'), an_event, class: 'th'
+                %td
+                  %h5
+                    = link_to(event_name(an_event), an_event)
       .columns.large-4.medium-5.small-12.hide-for-small
         .panel
           -if !@sticky.is_a? Event and @sticky.empty?
             %p Aucun événement important à venir
           -else
             %h4= link_to @sticky.title, @sticky
-            %h6.subheader= t('.sticky.sub_header', start: @sticky.starting_at, end: @sticky.ending_at, place: @sticky.place)
+            %h6.subheader= event_name @sticky, params: {place: @sticky.place}, t: 'events.index.sticky.sub_header'
             %p= link_to image_tag(@sticky.image.thumb.url), @sticky, class: 'th'
             %p= @sticky.description
         =render 'events/side'
@@ -36,7 +34,7 @@
               %p Aucun événement important à venir
             -else
               %h4= link_to @sticky.title, @sticky
-              %h6.subheader= t('.sticky.sub_header', start: @sticky.starting_at, end: @sticky.ending_at, place: @sticky.place)
+              %h6.subheader= event_name @sticky, params: {place: @sticky.place}, t: 'events.index.sticky.sub_header'
               %p= link_to image_tag(@sticky.image.thumb.url), @sticky, class: 'th'
               %p= @sticky.description
           .panel
