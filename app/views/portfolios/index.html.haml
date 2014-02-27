@@ -1,20 +1,12 @@
 .row
-  .off-canvas-wrap
-    .inner-wrap
-      .hide-for-large.show-for-small
-        %a.left-off-canvas-toggle.button.secondary.small
-          Bio
-      %h1 Portrait
-      .columns.large-8.medium-7
-        -if @portfolio.nil?
-          %p Aucune Image
-        -else
-          =render partial: 'layouts/image', locals: {image: @portfolio.image, to_show: @portfolio.image.asset.portrait.url}
-      .columns.large-4.medium-5.hide-for-small
-        =render 'bio'
-      %aside.left-off-canvas-menu.hide-for-large.show-for-small#vr-canvas
-        .panel
-          =render 'bio'
+  %h1 Portrait
+  .columns.large-4.medium-5.small-12.large-push-8.medium-push-7
+    =render 'bio'
+  .columns.large-8.medium-7.small-12.large-pull-4.medium-pull-5
+    -if @portfolio.nil?
+      %p Aucune Image
+    -else
+      =render partial: 'layouts/image', locals: {image: @portfolio.image, to_show: @portfolio.image.asset.portrait.url}
 
 .row
   .columns.small-12

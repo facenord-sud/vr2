@@ -6,7 +6,7 @@
       .columns.small-12
         -Sponsor.where(category: :gold).each do |p|
           .panel
-            =link_to(image_tag(p.image.asset.url, width: 460, height: 263), p.url, class: 'th')
+            =link_to(image_tag(p.image.asset.url, :'max-width' => 460,:'max-height' => 263), p.url, class: 'th')
             %h3= link_to p.title, p.url
   .columns.large-6.medium-6
     =image_tag 'sponsor.jpg', alt: 'image manquante de Valentin Rota', title: 'Valentin Rota remercie ses sponsors et donateurs'
@@ -24,7 +24,7 @@
     .panel
       %h4 Partenaires
       -Sponsor.where(category: :partner).each do |p|
-        =link_to(image_tag(p.image.asset.url, width: p_w, height: p_h), p.url)
+        =link_to(image_tag(p.image.asset.url, :'width' => p_w, :'height' => p_h), p.url)
         %h5= link_to p.title, p.url
         %hr
   -unless silver.empty?
@@ -32,7 +32,7 @@
       .panel
         %h4 Sponsors Argent
         -silver.each do |p|
-          =link_to(image_tag(p.image.asset.url, width: 288, height: 116), p.url)
+          =link_to(image_tag(p.image.asset.url, :'width' => 288, :'height' => 116), p.url)
           %h5= link_to p.title, p.url
           %hr
   -if silver.empty?
@@ -47,7 +47,7 @@
     .panel
       %h4 Sponsors Bronze
       -Sponsor.where(category: :bronze).each do |p|
-        =link_to(image_tag(p.image.asset.url, width: width, height: height), p.url)
+        =link_to(image_tag(p.image.asset.url, :'width' => width, :'height' => height), p.url)
         %h5= link_to p.title, p.url
         %hr
 .row
