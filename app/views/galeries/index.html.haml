@@ -7,11 +7,15 @@
           %ul.clearing-thumbs.clearing-feature{:'data-clearing' => true}
             -cover = false
             -a_galerie.images.each_with_index do |an_image, index|
+              -width = nil
+              -height = nil
               -if an_image.to_cover? or(!cover and index+1 == a_galerie.images.size)
                 -featured = 'clearing-featured-img image th'
                 -cover = true
+                -width = 200
+                -height = 130
               %li{class: featured}
-                =link_to(image_tag(an_image.asset.url, :'data-caption' => an_image.title+' '+an_image.legend), an_image.asset.url, class: 'th')
+                =link_to(image_tag(an_image.asset.url, :'data-caption' => an_image.title+' '+an_image.legend, height: height, width: width), an_image.asset.url, class: 'th')
                 -if index == 0
                   .legend
                     %h5= a_galerie.title

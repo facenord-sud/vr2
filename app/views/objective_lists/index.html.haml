@@ -4,7 +4,7 @@
 -else
   .row
     .columns.large-6
-      =render partial: 'layouts/image', locals: {image: @objective.image, to_show: @objective.image.asset.url}
+      =render partial: 'layouts/image', locals: {image: @objective.image, to_show: @objective.image.asset.portrait.url}
     .columns.large-6
       %table
         %thead
