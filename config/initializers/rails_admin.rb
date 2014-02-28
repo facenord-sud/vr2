@@ -65,7 +65,7 @@ RailsAdmin.config do |config|
   config.model Portfolio do
     edit do
       field :image
-      field :description, :wysihtml5
+      field :description, :ck_editor
       field :published
     end
   end

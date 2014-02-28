@@ -21,4 +21,5 @@
       devise_for :user
     end
     mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+    mount Ckeditor::Engine => '/ckeditor'
   end
