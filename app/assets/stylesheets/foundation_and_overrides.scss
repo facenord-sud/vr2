@@ -127,3 +127,21 @@
 .dark-panel {
   @include panel($bg: #363636);
 }
+
+.orbit-bullets li {
+  width: rem-calc(12px);
+  height: rem-calc(12px);
+  background-color: #8A8888;
+}
+
+.orbit-bullets li.active {
+  background-color: #474747;
+}
+
+.example-orbit-content {
+  margin-bottom: 0px;
+}
+
+.orbit-bullets-container {
+  margin-top: 0px;
+}
