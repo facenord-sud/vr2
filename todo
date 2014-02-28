@@ -4,10 +4,10 @@ a la une:
  affichage au clique -> fait
  seulement une ligne de texte -> fait
 résultats:
- ligne en jaune pour première place, argent pour 2e et brun pour 3 et blanc pour le rest
+ ligne en jaune pour première place, argent pour 2e et brun pour 3 et blanc pour le rest -> fait
 médailles:
- mêmes couleurs pour le th or, argent, bronze
- idem pour les cases avec un chiffre autre que zéro
+ mêmes couleurs pour le th or, argent, bronze -> fait
+ idem pour les cases avec un chiffre autre que zéro -> fait
 sponsors:
  titre:
   sponsors gold

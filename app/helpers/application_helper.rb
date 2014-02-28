@@ -51,6 +51,19 @@ module ApplicationHelper
     end
   end
 
+  def rank_to_color(points)
+    case points
+      when 1
+        'gold'
+      when 2
+        'silver'
+      when 3
+        'bronze'
+      else
+        ''
+    end
+  end
+
   private
 
     def event_t_name(event, params, start_format: '%d.%m.Y', end_format: :'%d.%m.%Y', t: 'events.index.print_event')

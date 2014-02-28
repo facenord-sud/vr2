@@ -2,7 +2,7 @@
   <div class="small-12 large-6 columns">
     <h1>Résultats</h1>
 
-    <table>
+    <table id="result">
       <thead>
       <tr>
         <th>Date</th>
@@ -13,7 +13,7 @@
 
       <tbody>
       <% @results.each do |result| %>
-          <tr>
+          <tr id="<%= rank_to_color(result.point) %>">
             <td><%= l(result.date, format: :short) %></td>
             <td><%= result.point %></td>
             <td><%= result.name %></td>
@@ -38,9 +38,9 @@
       <% @carreers.each do |carreer| %>
           <tr>
             <td><%= carreer.name %></td>
-            <td><%= carreer.gold %></td>
-            <td><%= carreer.silver %></td>
-            <td><%= carreer.bronze %></td>
+            <td <%= 'id=gold'if carreer.gold.to_i > 0%>><%= carreer.gold %></td>
+            <td <%= 'id=silver'if carreer.silver.to_i > 0%>><%= carreer.silver %></td>
+            <td <%= 'id=bronze'if carreer.bronze.to_i > 0%>><%= carreer.bronze %></td>
           </tr>
       <% end %>
       </tbody>
