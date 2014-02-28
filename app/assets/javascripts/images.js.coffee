@@ -28,8 +28,8 @@ $ ->
     down = 235
   else
     down = 400
-  $('#continue').click ->
-    $('html body').animate({scrollTop: $('#image').offset().top-down}, 'slow')
+  $('#continue').on 'click', ->
+    $('html, body').animate({scrollTop: $('#image').offset().top-down}, 'slow')
     #$('.contain-to-grid .top-bar').css('margin-top', '300px')
    ## $('#welcome').hide()
 
