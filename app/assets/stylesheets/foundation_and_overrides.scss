@@ -21,7 +21,7 @@
   }
 
   #top-bar {
-    margin-top: rem-calc(10px);
+    margin-top: rem-calc(20px);
     background-color: $topbar-bg-color;
   }
 }
@@ -108,7 +108,7 @@
     @media #{$small-only} {
       max-width: rem-calc(300px);
     }
-    margin-top: rem-calc(50px);
+    margin-top: rem-calc(20px);
     @media #{$small-only} {
       margin-top: rem-calc(10px);
     }
