@@ -1,5 +1,12 @@
 .image.th
-  =link_to image_tag(to_show, title: image.title, alt: image.legend), image.asset.url, class: 'th'
+  -if local_assigns[:uri].nil?
+    -locale_uri = image.asset.url
+  -else
+    -locale_uri = uri
+  -th_class = ''
+  -if !local_assigns[:th].nil? and th
+    -th_class = 'th'
+  =link_to image_tag(to_show, title: image.title, alt: image.legend), locale_uri, class: th_class
   .legend
     %h5= image.title
     %legend= image.legend

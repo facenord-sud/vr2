@@ -114,3 +114,16 @@
     }
   }
 }
+
+#to-la-une {
+  .legend {
+    margin-left: 0px;
+    margin-right: 0px;
+    background-color: #363636;
+    padding-bottom: 0px;
+  }
+}
+
+.dark-panel {
+  @include panel($bg: #363636);
+}

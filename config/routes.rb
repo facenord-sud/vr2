@@ -8,7 +8,7 @@
       end
       resources :results, only: [:index]
       resources :carreers, only: [:index]
-      #resources :posts
+      resources :posts, only: [:show]
       resources :users,   :only => [:show]
       resources :portfolios, only: [:index]
       resources :galeries, only: [:index]

@@ -9,18 +9,21 @@
       .row
         .columns.small-12
           %h1 A la une
-          %ul.example-orbit-content{:'data-orbit'=>true}
-            -@to_front.each do |tf|
-              %li{:'data-orbit-slide' => tf.title}
-                %div
-                  %h3= tf.title
-                  %h6.subheader= t('static_pages.home.h1.published_by', author: t('author'), time: time_ago_in_words(tf.updated_at))
+          %ul.example-orbit-content{:'data-orbit'=>true, :'data-options'=>"timer_speed: 5000;"}
+            -@to_front.each do |tf, index|
+              %li{:'data-orbit-slide' => "#{tf.title}-#{index}"}
+                %div.dark-panel
+                  %h3= link_to tf.title, post_path(tf)
                   -if tf.test_image.present?
-                    =render partial: 'layouts/image', locals: {image: tf.test_image, to_show: tf.test_image.asset.portrait.url}
+                    .image#to-la-une
+                      =link_to image_tag(tf.test_image.asset.portrait, title: tf.test_image.title, alt: tf.test_image.legend), post_path(tf)
+                      .legend
+                        %h5= tf.test_image.title
+                        %legend= tf.test_image.legend
                   -elsif tf.video.present?
                     .flex-video
-                      = raw tf.video.url.html_safe
-                  %p= tf.body.html_safe
+                      = raw tf.video.url.truncate(18, separator: ' ', ommision: '...').html_safe
+                  %p= raw tf.body.html_safe
         .columns.small-12#home-right.show-for-small
           .panel
             =render 'aside'

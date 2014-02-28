@@ -1,0 +1,14 @@
+.row
+  .columns.large-8.medium-7.small-12
+    %h3= @post.title
+    %h6.subheader= t('static_pages.home.h1.published_by', author: t('author'), time: time_ago_in_words(@post.updated_at))
+    =# image_tag(a_post.image.thumb.url)
+    -if @post.test_image.present?
+      =render partial: 'layouts/image', locals: {image: @post.test_image, to_show: @post.test_image.asset.portrait.url}
+    -elsif @post.video.present?
+      .flex-video
+        = raw @post.video.url.html_safe
+    %p= @post.body.html_safe
+  .columns.large-4.medium-5.small-12
+    =link_to 'Retour aux articles', root_path, class: 'button'
+    =render 'static_pages/aside'

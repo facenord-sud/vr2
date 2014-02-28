@@ -16,6 +16,8 @@
 
 class Post < ActiveRecord::Base
 
+  after_create :send_mail
+
   belongs_to :user
 
   #mount_uploader :image, ImageUploader
@@ -57,5 +59,13 @@ class Post < ActiveRecord::Base
       posts_to_return[a_post.start_year][a_post.start_month][a_post.id] = a_post
     end
     posts_to_return
+  end
+
+  protected
+
+  def send_mail
+    NewsLetter.all.each do |news|
+      NewsLetterMailer.create_send_new_post(self, news.email).deliver
+    end
   end
 end
