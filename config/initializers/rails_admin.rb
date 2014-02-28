@@ -99,7 +99,7 @@ RailsAdmin.config do |config|
 
    config.model ObjectiveList do
      edit do
-       field :main, :wysihtml5
+       field :main, :ck_editor
        field :image
        field :objectives
      end

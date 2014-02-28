@@ -4,7 +4,7 @@
     =Time.zone.now.year
   .columns.large-8.medium-7
     -@events.each do |month, events|
-      %h5= month
+      %h5= to_month_name month
       %table
         -events.each do |id, an_event|
           %tr

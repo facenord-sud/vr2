@@ -33,17 +33,17 @@ module ApplicationHelper
         if event.one_day?
           # event sur un jour
           t("#{t}_od",
-                    date: l(event.starting_at, format: '%d %B'),
+                    date: l(event.starting_at, format: '%d.%m'),
                     name: event.title,
                     place: event.place,
                     description: event.description)
         else
           #event sur le même mois
-          event_t_name event, params, start_format: '%d', end_format: '%d %B', t: t
+          event_t_name event, params, start_format: '%d', end_format: '%d.%m', t: t
         end
       else
         #event entre deux mois sur une année
-        event_t_name event, params, start_format: '%d %B', end_format: '%d %B', t: t
+        event_t_name event, params, start_format: '%d.%m', end_format: '%d.%m', t: t
       end
     else
       #event entre deux années
@@ -53,7 +53,7 @@ module ApplicationHelper
 
   private
 
-    def event_t_name(event, params, start_format: :long, end_format: :long, t: 'events.index.print_event')
+    def event_t_name(event, params, start_format: '%d.%m.Y', end_format: :'%d.%m.%Y', t: 'events.index.print_event')
       params[:start] = l(event.starting_at, format: start_format)
       params[:end] = l(event.ending_at, format: end_format)
       t(t, params)

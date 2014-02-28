@@ -82,8 +82,8 @@ fr:
             text3: Il y a plusieurs liens utiles qui fournissent une bonne documentation pour comprndre le fonctionement de ruby et ruby on rails. Je mettrai les liens prochainement
     events:
       index:
-        print_event: "Du %{start} au %{end}, %{name} à %{place}. %{description}"
-        print_event_od: "Le %{date}, %{name} à %{place}. %{description}"
+        print_event: "%{start} - %{end} : %{name} à %{place}. %{description}"
+        print_event_od: "%{date}, %{name} : à %{place}. %{description}"
         sticky:
           sub_header: "Du %{start} au %{end} à %{place}"
           sub_header_od: "Le %{date} à %{place}"
