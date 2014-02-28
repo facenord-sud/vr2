@@ -8,6 +8,6 @@
         =render partial: 'layouts/image', locals: {image: post.test_image, to_show: post.test_image.asset.portrait.url}
       -elsif post.video.present?
         .flex-video
-          = post.video.url
+          = raw post.video.url.html_safe
       %p= post.body.html_safe
       %hr

@@ -2,7 +2,7 @@
 @import "foundation";
 
 .contain-to-grid .top-bar {
-  margin-top: emCalc(150px);
+  margin-top: emCalc(100px);
   @media #{$xmedium-down} {
     margin-top: 0px;
   }

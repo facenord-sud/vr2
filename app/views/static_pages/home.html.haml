@@ -19,7 +19,7 @@
                     =render partial: 'layouts/image', locals: {image: tf.test_image, to_show: tf.test_image.asset.portrait.url}
                   -elsif tf.video.present?
                     .flex-video
-                      = tf.video.url
+                      = raw tf.video.url.html_safe
                   %p= tf.body.html_safe
         .columns.small-12#home-right.show-for-small
           .panel

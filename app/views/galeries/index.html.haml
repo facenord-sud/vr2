@@ -30,4 +30,4 @@
           %li
             .flex-video
               -#%iframe{width:  400, height: 300, src: a_video.url, allowfullscreen: true}
-              = a_video.url
+              = raw a_video.url.html_safe
