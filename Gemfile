@@ -1,9 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.0.0'
-
-gem 'rich'
-
+gem 'ckeditor'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
