@@ -30,7 +30,7 @@ class Event < ActiveRecord::Base
   ) }
   scope :next, -> { where('events.starting_at >= ?', Time.zone.now).order('starting_at ASC').first }
 
-  scope :future, -> { where('events.starting_at >= ? OR events.ending_at >= ?', Time.zone.now, Time.zone.now).order('starting_at ASC') }
+  scope :future, -> { where('(events.starting_at >= ? OR events.ending_at >= ?) AND (events.starting_at <= ? OR events.ending_at <= ?)', Time.zone.now, Time.zone.now, DateTime.zone.now.end_of_year, DateTime.zone.now.end_of_year).order('starting_at ASC') }
 
   scope :sticky, -> { where(to_front: true).order('updated_at DESC').first }
 
@@ -72,17 +72,17 @@ class Event < ActiveRecord::Base
     starting_at == ending_at
   end
 
-  def self.future_by_year
+  def self.future_by_month
     events = self.future
     return [] if events.empty?
-    year = events.first.start_year
-    events_to_return = { year => {}}
+    month = events.first.start_month
+    events_to_return = { month => {}}
     events.each do |an_event|
-      if year != an_event.start_year
-        year = an_event.start_year
-        events_to_return[year] = {}
+      if month != an_event.start_month
+        month = an_event.start_month
+        events_to_return[month] = {}
       end
-      events_to_return[an_event.start_year][an_event.id] = an_event
+      events_to_return[an_event.start_month][an_event.id] = an_event
     end
     events_to_return
   end

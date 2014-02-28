@@ -1,8 +1,10 @@
 .row
-  %h1 Calendrier
+  %h1
+    Calendrier
+    =Date.now.year
   .columns.large-8.medium-7
-    -@events.each do |year, events|
-      %h5= year
+    -@events.each do |month, events|
+      %h5= month
       %table
         -events.each do |id, an_event|
           %tr
