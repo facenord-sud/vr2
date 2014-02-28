@@ -86,6 +86,7 @@ fr:
         print_event_od: "Le %{date}, %{name} à %{place}. %{description}"
         sticky:
           sub_header: "Du %{start} au %{end} à %{place}"
+          sub_header_od: "Le %{date} à %{place}"
     months:
       january: Janvier
       february: Février
