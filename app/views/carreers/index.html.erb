@@ -8,8 +8,6 @@
         <th>Date</th>
         <th>Résultat</th>
         <th>Nom</th>
-        <th>Comp</th>
-        <th>Catégorie</th>
       </tr>
       </thead>
 
@@ -19,8 +17,6 @@
             <td><%= l(result.date, format: :short) %></td>
             <td><%= result.point %></td>
             <td><%= result.name %></td>
-            <td><%= result.comp %></td>
-            <td><%= result.category %></td>
           </tr>
       <% end %>
       </tbody>
@@ -32,9 +28,9 @@
       <thead>
       <tr>
         <th>Compétitions</th>
-        <th>Or</th>
-        <th>Argent</th>
-        <th>Bronze</th>
+        <th id="gold">Or</th>
+        <th id="silver">Argent</th>
+        <th id="bronze">Bronze</th>
       </tr>
       </thead>
 

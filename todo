@@ -1,0 +1,19 @@
+news letter envoyé à la création d'un nouvel article
+a la une:
+ temps de changement plus court
+ affichage au clique
+ seulement une ligne de texte
+résultats:
+ ligne en jaune pour première place, argent pour 2e et brun pour 3 et blanc pour le rest
+médailles:
+ mêmes couleurs pour le th or, argent, bronze
+ idem pour les cases avec un chiffre autre que zéro
+sponsors:
+ titre:
+  sponsors gold
+  sponsors silver
+  " bronze
+  partners
+ positon:
+  gold: à cote de l'inmage
+  autre sur trois colonnes même tailles

@@ -83,7 +83,7 @@ fr:
     events:
       index:
         print_event: "%{start} - %{end} : %{name} à %{place}. %{description}"
-        print_event_od: "%{date}, %{name} : à %{place}. %{description}"
+        print_event_od: "%{date} : %{name} à %{place}. %{description}"
         sticky:
           sub_header: "Du %{start} au %{end} à %{place}"
           sub_header_od: "Le %{date} à %{place}"
