@@ -1,7 +1,8 @@
 body{
-  background: url(image_path('contact.jpg')) no-repeat center fixed;
-  -webkit-background-size: cover; /* pour Chrome et Safari */
-  -moz-background-size: cover; /* pour Firefox */
-  -o-background-size: cover; /* pour Opera */
-  background-size: cover; /* version standardisée */
+  background: url(image_path('contact.jpg')) no-repeat top fixed;
+  -webkit-background-size: contain; /* pour Chrome et Safari */
+  -moz-background-size: contain; /* pour Firefox */
+  -o-background-size: contain; /* pour Opera */
+  background-size: contain; /* version standardisée */
+  background-color: black;
 }
