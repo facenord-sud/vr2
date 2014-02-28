@@ -21,9 +21,11 @@ RailsAdmin.config do |config|
   # config.main_app_name = Proc.new { |controller| [Rails.application.engine_name.titleize, controller.params['action'].titleize] }
 
    config.excluded_models << 'Contact'
-   config.excluded_models << 'Ckeditor::Asset'
-   config.excluded_models << 'Ckeditor::AttachmentFile'
-   config.excluded_models << 'Ckeditor::Picture'
+   #config.excluded_models << 'Ckeditor::Asset'
+   #config.excluded_models << 'Ckeditor::AttachmentFile'
+   #config.excluded_models << 'Ckeditor::Picture'
+   Rails.application.eager_load!
+   config.included_models = ActiveRecord::Base.descendants.map!(&:name)
 
    config.model Post do
      edit do

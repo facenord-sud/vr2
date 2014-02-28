@@ -44,7 +44,7 @@ module Collaide
     config.active_support.escape_html_entities_in_json = true
 
 
-     config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
+     #config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
     # Use SQL instead of Active Record's schema dumper when creating the database.
     # This is necessary if your schema can't be completely dumped by the schema dumper,
     # like if you have constraints or database-specific column types
