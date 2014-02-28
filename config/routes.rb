@@ -1,5 +1,6 @@
   Collaide::Application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
     localized do
       resources :objective_lists, only: :index
       resources :events, only: [:index, :show] do
