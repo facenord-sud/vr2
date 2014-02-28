@@ -2,7 +2,7 @@
 @import "foundation";
 
 .contain-to-grid .top-bar {
-  margin-top: emCalc(100px);
+  margin-top: emCalc(10px);
   @media #{$xmedium-down} {
     margin-top: 0px;
   }
@@ -21,7 +21,7 @@
   }
 
   #top-bar {
-    margin-top: rem-calc(60px);
+    margin-top: rem-calc(10px);
     background-color: $topbar-bg-color;
   }
 }
