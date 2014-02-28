@@ -1,6 +1,8 @@
 %h1 Les sponsors
 %blockquote Valentin Rota remercie ses sponsors et donateurs pour leur précieux soutien sur sa route pour Rio 2016!
 .row
+  .columns.small-12
+    %h2 Gold
   .columns.large-6.medium-6
     .row
       .columns.small-12
@@ -10,10 +12,10 @@
             %h3= link_to p.title, p.url
   .columns.large-6.medium-6
     =image_tag 'sponsor.jpg', alt: 'image manquante de Valentin Rota', title: 'Valentin Rota remercie ses sponsors et donateurs'
-.row
+.row#other-sponsors
   .columns.small-12.medium-4.large-4
     .panel
-      %h4 Sponsors Silver
+      %h4 Silver
       -Sponsor.where(category: :silver).each do |p|
         =link_to(image_tag(p.image.asset.url), p.url)
         %h5= link_to p.title, p.url
@@ -21,15 +23,15 @@
 
   .columns.large-4.medium-4.small-12
     .panel
-      %h4 Sponsors Bronze
+      %h4 Bronze
       -Sponsor.where(category: :bronze).each do |p|
-        =link_to(image_tag(p.image.asset.url, :'width' => 288, :'height' => 116), p.url)
+        =link_to(image_tag(p.image.asset.url), p.url)
         %h5= link_to p.title, p.url
   .columns.large-4.medium-4.small-12
     .panel
       %h4 Partenaires
       -Sponsor.where(category: :partner).each do |p|
-        =link_to(image_tag(p.image.asset.url, :'width' => width, :'height' => height), p.url)
+        =link_to(image_tag(p.image.asset.url), p.url)
         %h5= link_to p.title, p.url
         %hr
 .row
