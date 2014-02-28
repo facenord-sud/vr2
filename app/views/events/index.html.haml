@@ -1,7 +1,7 @@
 .row
   %h1
     Calendrier
-    =Date.now.year
+    =Time.zone.now.year
   .columns.large-8.medium-7
     -@events.each do |month, events|
       %h5= month
