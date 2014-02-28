@@ -22,8 +22,8 @@
                         %legend= tf.test_image.legend
                   -elsif tf.video.present?
                     .flex-video
-                      = raw tf.video.url.truncate(18, separator: ' ', ommision: '...').html_safe
-                  %p= raw tf.body.html_safe
+                      = raw tf.video.url.html_safe
+                  %p= raw tf.body.truncate(100, separator: ' ', omission: '...'+link_to(' (lire la suite)', root_path(tf))).html_safe
         .columns.small-12#home-right.show-for-small
           .panel
             =render 'aside'
