@@ -1,3 +1,4 @@
+@import "var.css.scss";
 body{
   background: url(image_path('agenda.jpg')) no-repeat top fixed;
   -webkit-background-size: contain; /* pour Chrome et Safari */
@@ -5,4 +6,14 @@ body{
   -o-background-size: contain; /* pour Opera */
   background-size: contain; /* version standardisée */
   background-color: black;
+}
+
+@media #{$medium-up} {
+  body{
+    background: url(image_path('agenda.jpg')) no-repeat center fixed;
+    -webkit-background-size: cover; /* pour Chrome et Safari */
+    -moz-background-size: cover; /* pour Firefox */
+    -o-background-size: cover; /* pour Opera */
+    background-size: cover; /* version standardisée */
+  }
 }
