@@ -8,7 +8,7 @@ body{
   background-color: black;
 }
 
-@media #{$large-only} {
+@media #{$large-up} {
   body{
     background: url(image_path('agenda.jpg')) no-repeat center fixed;
     -webkit-background-size: cover; /* pour Chrome et Safari */
