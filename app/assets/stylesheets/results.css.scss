@@ -8,7 +8,7 @@ body{
   background-color: black;
 }
 
-@media #{$medium-up} {
+@media #{$large-only} {
   body{
     background: url(image_path('result.jpg')) no-repeat center fixed;
     -webkit-background-size: cover; /* pour Chrome et Safari */
