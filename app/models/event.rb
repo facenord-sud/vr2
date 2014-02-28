@@ -30,7 +30,7 @@ class Event < ActiveRecord::Base
   ) }
   scope :next, -> { where('events.starting_at >= ?', Time.zone.now).order('starting_at ASC').first }
 
-  scope :future, -> { where('(events.starting_at >= ? OR events.ending_at >= ?) AND (events.starting_at <= ? OR events.ending_at <= ?)', Time.zone.now, Time.zone.now, DateTime.zone.now.end_of_year, DateTime.zone.now.end_of_year).order('starting_at ASC') }
+  scope :future, -> { where('(events.starting_at >= ? OR events.ending_at >= ?) AND (events.starting_at <= ? OR events.ending_at <= ?)', Time.zone.now, Time.zone.now, Time.zone.now.end_of_year, Time.zone.now.end_of_year).order('starting_at ASC') }
 
   scope :sticky, -> { where(to_front: true).order('updated_at DESC').first }
 
