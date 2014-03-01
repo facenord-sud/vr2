@@ -10,7 +10,7 @@
       .
     %h3= @post.title
     -unless attachments['image.jpg'].nil?
-      =image_tag attachments['image.jpg'].url, alt: @post.test_image.legend, title: @post.test_image.title
+      =image_tag attachments['image.jpg'].url
       .legend
         %h5= @post.test_image.title
         %legend= @post.test_image.legend
