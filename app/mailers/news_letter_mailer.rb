@@ -3,7 +3,8 @@ class NewsLetterMailer < ActionMailer::Base
 
   def send_new_post (post, email)
     @post = post
-    attachments.inline['image.jpg'] = File.read(post.test_image.asset.portrait.current_path)
+    image = post.test_image.asset.portrait.current_path
+    attachments.inline['image.jpg'] = File.read(image) unless image.blank?
     mail to: email, subject: 'Valentin Rota a publié un nouvel sur valentin-rota.ch'
   end
 end
