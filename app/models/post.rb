@@ -65,7 +65,7 @@ class Post < ActiveRecord::Base
 
   def send_mail
     NewsLetter.all.each do |news|
-      NewsLetterMailer.create_send_new_post(self, news.email).deliver
+      NewsLetterMailer.send_new_post(self, news.email).deliver
     end
   end
 end
