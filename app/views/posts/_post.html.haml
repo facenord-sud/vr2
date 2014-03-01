@@ -4,7 +4,7 @@
       %h3= post.title
       %h6.subheader= t('static_pages.home.h1.published_by', author: t('author'), time: time_ago_in_words(post.updated_at))
       =# image_tag(a_post.image.thumb.url)
-      -if !post.test_image.asset.nil?
+      -if !post.test_image.nil? or !post.test_image.asset.nil?
         =render partial: 'layouts/image', locals: {image: post.test_image, to_show: post.test_image.asset.portrait.url}
       -elsif post.video.present?
         .flex-video
