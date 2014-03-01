@@ -3,19 +3,22 @@
   %head
     %meta{content: 'text/html: charset=UTF-8', :'http-equiv' => 'Content-Type'}
   %body
-    %h1
+    %h2
       Valentin Rota a publié un
       %a{href: post_url(@post)}
-        nouvel article.
-      Cliquez-ici:
-      =post_url(@post)
-      pour l'afficher
+        nouvel article
+      .
     %h3= @post.title
-    %h6.subheader= t('static_pages.home.h1.published_by', author: t('author'), time: time_ago_in_words(@post.updated_at))
-    =# image_tag(a_post.image.thumb.url)
     -unless attachments['image.jpg'].nil?
       =image_tag attachments['image.jpg'].url, alt: @post.test_image.legend, title: @post.test_image.title
       .legend
         %h5= @post.test_image.title
         %legend= @post.test_image.legend
     %p= @post.body.html_safe
+    %hr
+    %footer
+      %p
+        Visitez le site de
+        %a{href: 'http://valentin-rota.ch'} Valentin Rota
+        pour lire ses articles, connaître son calendrier ou voir ses photos et vidéos
+      %p Cet e-mail vous a été envoyé automatiquement suite à votre inscription à la news letter
