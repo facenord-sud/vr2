@@ -5,6 +5,8 @@ gem 'ckeditor'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
+gem 'rack-canonical-host'
+
 gem 'bcrypt-ruby', '3.0.1'
 
 gem 'faker', '1.0.1'
