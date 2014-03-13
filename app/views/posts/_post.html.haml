@@ -10,5 +10,6 @@
         .flex-video
           = raw post.video.url.html_safe
       %p= post.body.html_safe
+      Rails.logger.error(post_counter.inspect+' == '+ @posts.size.inspect)
       -if post_counter+1 != @posts.size
         %hr
