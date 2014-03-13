@@ -2,7 +2,7 @@
 -if !@event.is_a? Event or (!@event.is_a? Event and Event @event.empty?)
   %h5 Aucun prochain événement
 -else
-  %h5= link_to @event.title, events_path
+  %h5= link_to @event.title, event_path(@event)
   %p= event_name @event, params: {place: @event.place}, t: 'events.index.sticky.sub_header'
   =link_to(image_tag(@event.image.thumb.url), event_path(@event), class: 'th') unless @event.image.url.nil?
 %hr
