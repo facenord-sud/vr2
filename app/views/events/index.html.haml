@@ -18,6 +18,8 @@
       -if !@sticky.is_a? Event and @sticky.empty?
         %p Aucun événement important à venir
       -else
+        -Rails.logger.error(@sticky.inspect)
+        -Rails.logger.error(@sticky.pretty_inspect)
         %h4= link_to @sticky.title, @sticky
         %h6.subheader= event_name @sticky, params: {place: @sticky.place}, t: 'events.index.sticky.sub_header'
         %p= link_to image_tag(@sticky.image.thumb.url), @sticky, class: 'th'

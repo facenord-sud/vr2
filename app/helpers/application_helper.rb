@@ -66,7 +66,7 @@ module ApplicationHelper
 
   private
 
-    def event_t_name(event, params, start_format: '%d.%m.Y', end_format: :'%d.%m.%Y', t: 'events.index.print_event')
+    def event_t_name(event, params, start_format: '%d.%m.%Y', end_format: '%d.%m.%Y', t: 'events.index.print_event')
       params[:start] = l(event.starting_at, format: start_format)
       params[:end] = l(event.ending_at, format: end_format)
       t(t, params)

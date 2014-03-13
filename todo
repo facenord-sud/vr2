@@ -17,3 +17,22 @@ sponsors:
  positon:
   gold: à cote de l'inmage
   autre sur trois colonnes même tailles
+
+ERRORS:
+#########################################
+########## /calendrier ###############
+#########################################
+ActionView::Template::Error (undefined method `title' for #<ActiveRecord::Relation::ActiveRecord_Relation_Event:0x007f9060ed0a38>):
+    18:       -if !@sticky.is_a? Event and @sticky.empty?
+    19:         %p Aucun événement important à venir
+    20:       -else
+    21:         %h4= link_to @sticky.title, @sticky
+    22:         %h6.subheader= event_name @sticky, params: {place: @sticky.place}, t: 'events.index.sticky.sub_header'
+    23:         %p= link_to image_tag(@sticky.image.thumb.url), @sticky, class: 'th'
+    24:         %p= @sticky.description
+  app/views/events/index.html.haml:21:in `_app_views_events_index_html_haml__1795633954212554354_45918880'
+  app/controllers/events_controller.rb:9:in `index'
+#########################################
+############ /home ######################
+#########################################
+pas de vidéo affichée quand vidéo dans article
