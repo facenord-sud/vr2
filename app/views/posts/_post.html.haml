@@ -10,4 +10,5 @@
         .flex-video
           = raw post.video.url.html_safe
       %p= post.body.html_safe
-      %hr
+      -if post_counter+1 != @posts.size
+        %hr
