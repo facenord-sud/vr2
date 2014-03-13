@@ -14,7 +14,7 @@
               %li{:'data-orbit-slide' => "#{tf.title}-#{index}"}
                 %div.dark-panel
                   %h3= link_to tf.title, post_path(tf)
-                  -if tf.test_image.present?
+                  -if tf.test_image.present? and tf.test_image.asset.present?
                     .image#to-la-une
                       =link_to image_tag(tf.test_image.asset.portrait, title: tf.test_image.title, alt: tf.test_image.legend), post_path(tf)
                       .legend
