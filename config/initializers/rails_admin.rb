@@ -30,7 +30,7 @@ RailsAdmin.config do |config|
    config.model Post do
      edit do
        field :title
-       field :body, :wysihtml5
+       field :body, :ck_editor
        field :test_image
        field :video
        field :published

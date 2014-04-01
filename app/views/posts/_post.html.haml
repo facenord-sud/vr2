@@ -9,7 +9,6 @@
       -elsif post.video.present?
         .flex-video
           = raw post.video.url.html_safe
-      %p= post.body.html_safe
-      -Rails.logger.error(post_counter.inspect+' == '+ @posts.size.inspect + ' - '+@to_front.size.inspect + ' == '+(@posts.size - @to_front.size).inspect)
+      = post.body.html_safe
       -if post_counter != (@posts.size - @to_front.size)
         %hr
