@@ -4,9 +4,9 @@
     %meta{content: 'text/html: charset=UTF-8', :'http-equiv' => 'Content-Type'}
   %body
     %h2
-      Valentin Rota a publié un
-      %a{href: post_url(@post)}
-        nouvel article
+      Valentin Rota a publié un nouvel article (
+      %a{href: post_url(@post)}= post_url(@post)
+      )
     %h3= @post.title
     -unless attachments['image.jpg'].nil?
       =image_tag attachments['image.jpg'].url

@@ -14,8 +14,8 @@
       <tbody>
       <% @results.each do |result| %>
           <tr id="<%= rank_to_color(result.point) %>">
-            <td><%= l(result.date, format: :short) %></td>
-            <td><%= result.point %></td>
+            <td><%= l(result.date, format: '%e %b %Y') %></td>
+            <td class="text-center"><%= result.point %></td>
             <td><%= result.name %></td>
           </tr>
       <% end %>
@@ -38,13 +38,17 @@
       <% @carreers.each do |carreer| %>
           <tr>
             <td><%= carreer.name %></td>
-            <td <%= 'id=gold'if carreer.gold.to_i > 0%>><%= carreer.gold %></td>
-            <td <%= 'id=silver'if carreer.silver.to_i > 0%>><%= carreer.silver %></td>
-            <td <%= 'id=bronze'if carreer.bronze.to_i > 0%>><%= carreer.bronze %></td>
+            <td <%= 'id=gold'if carreer.gold.to_i > 0%> class="text-center"><%= carreer.gold %></td>
+            <td <%= 'id=silver'if carreer.silver.to_i > 0%> class="text-center"><%= carreer.silver %></td>
+            <td <%= 'id=bronze'if carreer.bronze.to_i > 0%> class="text-center"><%= carreer.bronze %></td>
           </tr>
       <% end %>
       </tbody>
     </table>
   </div>
 </div>
+
+<p>
+  Pour plus de résultats et stats, rendez-vous sur <a href="http://www.judoinside.com/judoka/view/39690/">Judo inside</a>
+</p>
 
